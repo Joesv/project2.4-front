@@ -12,6 +12,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
 import {MatDividerModule} from "@angular/material/divider";
 import { RegisterComponent } from './register/register.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -33,7 +34,8 @@ import { RegisterComponent } from './register/register.component';
     MatCardModule,
     MatInputModule,
     MatButtonModule,
-    MatDividerModule
+    MatDividerModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
