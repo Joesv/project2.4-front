@@ -13,6 +13,7 @@ import { MatButtonModule } from "@angular/material/button";
 import {MatDividerModule} from "@angular/material/divider";
 import { RegisterComponent } from './register/register.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -20,7 +21,8 @@ import {ReactiveFormsModule} from "@angular/forms";
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
