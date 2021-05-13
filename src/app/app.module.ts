@@ -7,12 +7,17 @@ import { environment } from '../environments/environment';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatCardModule } from "@angular/material/card";
-import { MatInputModule } from "@angular/material/input";
-import { MatButtonModule } from "@angular/material/button";
-import {MatDividerModule} from "@angular/material/divider";
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import {MatDividerModule} from '@angular/material/divider';
 import { RegisterComponent } from './register/register.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {ReactiveFormsModule} from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import {RouterModule} from '@angular/router';
+
+import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -20,7 +25,9 @@ import {ReactiveFormsModule} from "@angular/forms";
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +42,14 @@ import {ReactiveFormsModule} from "@angular/forms";
     MatInputModule,
     MatButtonModule,
     MatDividerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    RouterModule.forRoot([
+      {path: 'home', component: HomeComponent},
+      {path: 'login', component: LoginComponent},
+      {path: '', redirectTo: '/login', pathMatch: 'full'},
+      {path: '**', component: PageNotFoundComponent},
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
