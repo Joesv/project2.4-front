@@ -43,13 +43,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatButtonModule,
     MatDividerModule,
     ReactiveFormsModule,
-    AppRoutingModule,
-    RouterModule.forRoot([
-      {path: 'home', component: HomeComponent},
-      {path: 'login', component: LoginComponent},
-      {path: '', redirectTo: '/login', pathMatch: 'full'},
-      {path: '**', component: PageNotFoundComponent},
-    ])
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
