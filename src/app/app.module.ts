@@ -13,6 +13,8 @@ import { MatButtonModule } from "@angular/material/button";
 import {MatDividerModule} from "@angular/material/divider";
 import { RegisterComponent } from './register/register.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
@@ -20,7 +22,8 @@ import {ReactiveFormsModule} from "@angular/forms";
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     MatInputModule,
     MatButtonModule,
     MatDividerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
