@@ -17,6 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -25,7 +26,8 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +48,7 @@ import { HomeComponent } from './home/home.component';
       {path: 'home', component: HomeComponent},
       {path: 'login', component: LoginComponent},
       {path: '', redirectTo: '/login', pathMatch: 'full'},
+      {path: '**', component: PageNotFoundComponent},
     ])
   ],
   providers: [],
