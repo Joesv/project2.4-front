@@ -4,24 +4,24 @@
   </mat-card-header>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <form>
+    <form [formGroup]="form">
       <p>
         <mat-form-field>
-          <input type="text" matInput placeholder="username">
+          <input type="text" matInput placeholder="username" formControlName="username">
         </mat-form-field>
       </p>
 
 
       <p>
         <mat-form-field>
-          <input type="password" matInput placeholder="password">
+          <input type="password" matInput placeholder="password" formControlName="password">
         </mat-form-field>
       </p>
 
     </form>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-flat-button color="primary">Login!</button>
+    <button mat-flat-button color="primary" (click)="login()">Login!</button>
     <p>No account yet? <button mat-button>Register!</button></p>
   </mat-card-actions>
 </mat-card>
