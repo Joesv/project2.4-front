@@ -22,6 +22,9 @@
   </mat-card-content>
   <mat-card-actions>
     <button mat-flat-button color="primary" (click)="login()">Login!</button>
+    <button
+      [routerLink]="['/home']"
+      mat-flat-button color="primary">HOME</button>
     <p>No account yet? <button mat-button>Register!</button></p>
   </mat-card-actions>
 </mat-card>
