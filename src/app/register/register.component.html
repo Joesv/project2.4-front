@@ -1,6 +1,6 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Login</mat-card-title>
+    <mat-card-title>Register</mat-card-title>
   </mat-card-header>
   <mat-divider></mat-divider>
   <mat-card-content>
@@ -38,6 +38,6 @@
   </mat-card-content>
   <mat-card-actions>
     <button mat-flat-button color="primary" (click)="register()">Register!</button>
-    <p>Already have an account? <button mat-button>Login!</button></p>
+    <p>Already have an account? <button [routerLink]="['/login']" mat-button>Login!</button></p>
   </mat-card-actions>
 </mat-card>

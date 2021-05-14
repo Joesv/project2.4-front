@@ -7,7 +7,7 @@
     <form [formGroup]="form">
       <p>
         <mat-form-field>
-          <input type="text" matInput placeholder="username" formControlName="username">
+          <input type="email" matInput placeholder="email" formControlName="email">
         </mat-form-field>
       </p>
 
@@ -25,6 +25,6 @@
     <button
       [routerLink]="['/home']"
       mat-flat-button color="primary">HOME</button>
-    <p>No account yet? <button mat-button>Register!</button></p>
+    <p>No account yet? <button [routerLink]="['/register']" mat-button>Register!</button></p>
   </mat-card-actions>
 </mat-card>
