@@ -38,6 +38,6 @@
   </mat-card-content>
   <mat-card-actions>
     <button mat-flat-button color="primary" (click)="register()">Register!</button>
-    <p>Already have an account? <button mat-button>Login!</button></p>
+    <p>Already have an account? <button [routerLink]="['/login']" mat-button>Login!</button></p>
   </mat-card-actions>
 </mat-card>
