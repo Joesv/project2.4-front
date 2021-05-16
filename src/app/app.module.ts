@@ -18,6 +18,7 @@ import {RouterModule} from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AbstractDeviceComponent } from './devices/abstract-device/abstract-device.component';
 
 
 
@@ -27,7 +28,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AbstractDeviceComponent
   ],
   imports: [
     BrowserModule,
