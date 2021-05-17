@@ -1,6 +1,7 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>[ device name ]</mat-card-title>
+    <mat-card-title>{{ deviceTitle }}</mat-card-title>
+    <mat-card-subtitle>{{ deviceType }}</mat-card-subtitle>
   </mat-card-header>
   <mat-divider></mat-divider>
   <mat-card-content>
@@ -8,5 +9,7 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="edit()">Edit</button>
+    <button mat-raised-button color="warn" (click)="delete()">Delete</button>
   </mat-card-actions>
 </mat-card>
