@@ -5,8 +5,7 @@
   </mat-card-header>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <p>
-    </p>
+    <p *ngFor="let data of dataPoints">{{ data.name }}: {{ data.value }}</p>
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button color="primary" (click)="edit()">Edit</button>

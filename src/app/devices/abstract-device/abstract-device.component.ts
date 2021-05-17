@@ -23,6 +23,7 @@ import {style, state, animate, transition, trigger} from '@angular/animations';
 export class AbstractDeviceComponent implements OnInit {
   @Input() deviceTitle: string;
   @Input() deviceType: string;
+  @Input() dataPoints: Array<any>;
   deleted = false;
 
   constructor(
@@ -32,6 +33,7 @@ export class AbstractDeviceComponent implements OnInit {
   ngOnInit(): void {
     this.deviceTitle = this.deviceTitle ?? 'Unknown device';
     this.deviceType = this.deviceType ?? 'Unknown type';
+    this.dataPoints = this.dataPoints ?? [{name: 'temp', value: '20.4'}, {name: 'humid', value: '53.2'}];
   }
 
   edit(): void {
@@ -46,20 +48,27 @@ export class AbstractDeviceComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((confirmed: boolean) => {
-      if (confirmed) {
-        console.log(`Delete device ${this.deviceTitle}`);
-        this.deleted = true;
-
-        const snackBarRef = this.snackBar.open(`Deleted ${this.deviceTitle}.`, 'Undo', {
-          duration: 3000
-        });
-
-        snackBarRef.onAction().subscribe(() => {
-          console.log('Undo somehow??');
-          this.deleted = false;
-        });
+      if (!confirmed) {
+        return;
       }
+
+      this.deleted = true;
+
+      const snackBarRef = this.snackBar.open(`Deleted ${this.deviceTitle}.`, 'Undo', {
+        duration: 3000
+      });
+
+      snackBarRef.onAction().subscribe(() => {
+        // 'Undo'!
+        this.deleted = false;
+      });
+
+      snackBarRef.afterDismissed().subscribe((dismiss) => {
+        if (!dismiss.dismissedByAction) {
+          // User hasn't pressed undo, so actually delete.
+          console.log(`Delete device ${this.deviceTitle}`);
+        }
+      });
     });
   }
-
 }
