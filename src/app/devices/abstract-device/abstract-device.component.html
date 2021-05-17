@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card *ngIf="!deleted" [@fadeInOut]>
   <mat-card-header>
     <mat-card-title>{{ deviceTitle }}</mat-card-title>
     <mat-card-subtitle>{{ deviceType }}</mat-card-subtitle>
