@@ -8,6 +8,7 @@
     <p *ngFor="let data of dataPoints">{{ data.name }}: {{ data.value }}</p>
   </mat-card-content>
   <mat-card-actions>
+    <mat-slide-toggle>ON/OFF</mat-slide-toggle>
     <button mat-raised-button color="primary" (click)="edit()">Edit</button>
     <button mat-raised-button color="warn" (click)="delete()">Delete</button>
   </mat-card-actions>

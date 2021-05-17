@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-title>
+    ISSA LAMP
+  </mat-card-title>
+
+  <mat-card-content>
+    <div *ngIf="!lightState">
+      <mat-icon>tungsten</mat-icon>
+    </div>
+    <div *ngIf="lightState">
+      <mat-icon>dark_mode</mat-icon>
+    </div>
+    <p>
+      {{lightState}}
+    </p>
+  </mat-card-content>
+
+
+  <mat-card-actions>
+    <mat-slide-toggle (click)="switchLightState()"></mat-slide-toggle>
+  </mat-card-actions>
+</mat-card>

@@ -21,6 +21,10 @@ import { AbstractDeviceComponent } from './devices/abstract-device/abstract-devi
 import { ConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LightDeviceComponentComponent } from './devices/light-device-component/light-device-component.component';
+import { SlideToggleComponent } from './buttons/slide-toggle/slide-toggle.component';
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {MatIconModule} from "@angular/material/icon";
 
 
 @NgModule({
@@ -31,7 +35,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     HomeComponent,
     PageNotFoundComponent,
     AbstractDeviceComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    LightDeviceComponentComponent,
+    SlideToggleComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -42,14 +49,16 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
       registrationStrategy: 'registerWhenStable:30000'
     }),
     BrowserAnimationsModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
     MatCardModule,
     MatInputModule,
     MatButtonModule,
     MatDividerModule,
-    ReactiveFormsModule,
-    AppRoutingModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSlideToggleModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
