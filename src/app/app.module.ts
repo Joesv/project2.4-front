@@ -16,9 +16,11 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
 
+import { HttpClientModule} from "@angular/common/http";
+
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
+import { WeatherCardComponent } from './weather-card/weather-card.component';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    WeatherCardComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatButtonModule,
     MatDividerModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
