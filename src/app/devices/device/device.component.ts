@@ -1,8 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {ConfirmDialogComponent} from '../../dialogs/confirm-dialog/confirm-dialog.component';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import {style, state, animate, transition, trigger} from '@angular/animations';
+import {MatMenuTrigger} from '@angular/material/menu';
 
 @Component({
   selector: 'app-device',
@@ -23,8 +24,8 @@ import {style, state, animate, transition, trigger} from '@angular/animations';
 export class DeviceComponent implements OnInit {
   @Input() deviceTitle: string;
   @Input() deviceType: string;
-  @Input() dataPoints: Array<any>;
   deleted = false;
+  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
   constructor(
     private snackBar: MatSnackBar,
@@ -33,7 +34,6 @@ export class DeviceComponent implements OnInit {
   ngOnInit(): void {
     this.deviceTitle = this.deviceTitle ?? 'Unknown device';
     this.deviceType = this.deviceType ?? 'Unknown type';
-    this.dataPoints = this.dataPoints ?? [{name: 'temp', value: '20.4'}, {name: 'humid', value: '53.2'}];
   }
 
   edit(): void {

@@ -7,3 +7,12 @@ mat-card {
 mat-card-content {
   margin-top: 1em;
 }
+
+.card-container-right {
+  display: inline;
+  float: right;
+}
+
+.card-container-left {
+  display: inline;
+}
