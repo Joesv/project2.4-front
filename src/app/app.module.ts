@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +22,7 @@ import { DeviceComponent } from './devices/device/device.component';
 import { ConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NavbarComponent } from './navbar/navbar.component';
 import { LampDeviceComponent } from './devices/lamp-device/lamp-device.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
@@ -33,8 +35,10 @@ import { MatIconModule } from '@angular/material/icon';
     RegisterComponent,
     HomeComponent,
     PageNotFoundComponent,
-    DeviceComponent,
     ConfirmDialogComponent,
+    PageNotFoundComponent,
+    NavbarComponent,
+    DeviceComponent,
     LampDeviceComponent
   ],
   imports: [
@@ -54,6 +58,7 @@ import { MatIconModule } from '@angular/material/icon';
     AppRoutingModule,
     MatDialogModule,
     MatSnackBarModule,
+    MatToolbarModule,
     MatMenuModule,
     MatIconModule
   ],
