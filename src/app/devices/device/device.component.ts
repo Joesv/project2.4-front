@@ -23,7 +23,6 @@ import {style, state, animate, transition, trigger} from '@angular/animations';
 export class DeviceComponent implements OnInit {
   @Input() deviceTitle: string;
   @Input() deviceType: string;
-  @Input() dataPoints: Array<any>;
   deleted = false;
 
   constructor(
@@ -33,7 +32,6 @@ export class DeviceComponent implements OnInit {
   ngOnInit(): void {
     this.deviceTitle = this.deviceTitle ?? 'Unknown device';
     this.deviceType = this.deviceType ?? 'Unknown type';
-    this.dataPoints = this.dataPoints ?? [{name: 'temp', value: '20.4'}, {name: 'humid', value: '53.2'}];
   }
 
   edit(): void {
