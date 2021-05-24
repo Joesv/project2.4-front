@@ -1,8 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {ConfirmDialogComponent} from '../../dialogs/confirm-dialog/confirm-dialog.component';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import {style, state, animate, transition, trigger} from '@angular/animations';
+import {MatMenuTrigger} from '@angular/material/menu';
 
 @Component({
   selector: 'app-device',
@@ -24,6 +25,7 @@ export class DeviceComponent implements OnInit {
   @Input() deviceTitle: string;
   @Input() deviceType: string;
   deleted = false;
+  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
   constructor(
     private snackBar: MatSnackBar,
