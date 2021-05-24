@@ -18,12 +18,14 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { AbstractDeviceComponent } from './devices/abstract-device/abstract-device.component';
+import { DeviceComponent } from './devices/device/device.component';
 import { ConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NavbarComponent } from './navbar/navbar.component';
-
+import { LampDeviceComponent } from './devices/lamp-device/lamp-device.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -33,10 +35,11 @@ import { NavbarComponent } from './navbar/navbar.component';
     RegisterComponent,
     HomeComponent,
     PageNotFoundComponent,
-    AbstractDeviceComponent,
     ConfirmDialogComponent,
     PageNotFoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    DeviceComponent,
+    LampDeviceComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     AppRoutingModule,
     MatDialogModule,
     MatSnackBarModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatMenuModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
