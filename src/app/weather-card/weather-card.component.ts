@@ -73,12 +73,23 @@ export interface BuienRadarStation {
   id: string;
   stationid: number;
   stationname: string;
-  region: string;
   lat: number;
   lon: number;
   regio: string;
+  timestamp: string;
+  weatherdescription: string;
+  iconurl: string;
+  graphUrl: string;
+  winddirection: string;
   sunpower: number;
   temperature: number;
+  groundtermperature: number;
+  feeltemperature: number;
+  windgusts: number;
+  humidity: number;
+  precipitation: number;
+  rainFallLast24Hour: number;
+  rainFallLastHour: number;
   winddirectiondegrees: number;
   windspeed: number;
 }

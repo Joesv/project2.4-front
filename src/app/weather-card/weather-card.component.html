@@ -5,7 +5,10 @@
   </mat-card-header>
   <mat-card-content>
     <p>The current temperature is {{currentWeather.temperature}}° Celsius.</p>
+    <p>{{currentWeather.weatherdescription}}</p>
     <p>The wind direction is {{currentWeather.winddirectiondegrees}} and the speed is {{currentWeather.windspeed}}</p>
+    <p>Humidity: {{currentWeather.humidity}}.</p>
+
     <div [@bodyExpansion]="state" class="expandable-content" *ngFor="let entry of precipitationForecast">
       <p>{{entry.time}}: {{entry.precipitation}}mm</p>
     </div>
