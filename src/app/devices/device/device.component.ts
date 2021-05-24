@@ -5,9 +5,9 @@ import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import {style, state, animate, transition, trigger} from '@angular/animations';
 
 @Component({
-  selector: 'app-abstract-device',
-  templateUrl: './abstract-device.component.html',
-  styleUrls: ['./abstract-device.component.css'],
+  selector: 'app-device',
+  templateUrl: './device.component.html',
+  styleUrls: ['./device.component.css'],
   animations: [
     trigger('fadeInOut', [
       transition(':enter', [   // :enter is alias to 'void => *'
@@ -20,7 +20,7 @@ import {style, state, animate, transition, trigger} from '@angular/animations';
     ])
   ]
 })
-export class AbstractDeviceComponent implements OnInit {
+export class DeviceComponent implements OnInit {
   @Input() deviceTitle: string;
   @Input() deviceType: string;
   @Input() dataPoints: Array<any>;

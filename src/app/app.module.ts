@@ -17,10 +17,11 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { AbstractDeviceComponent } from './devices/abstract-device/abstract-device.component';
+import { DeviceComponent } from './devices/device/device.component';
 import { ConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LampDeviceComponent } from './devices/lamp-device/lamp-device.component';
 
 
 @NgModule({
@@ -30,8 +31,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     RegisterComponent,
     HomeComponent,
     PageNotFoundComponent,
-    AbstractDeviceComponent,
-    ConfirmDialogComponent
+    DeviceComponent,
+    ConfirmDialogComponent,
+    LampDeviceComponent
   ],
   imports: [
     BrowserModule,
