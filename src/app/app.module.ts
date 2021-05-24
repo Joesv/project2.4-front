@@ -20,7 +20,14 @@ import { HttpClientModule} from "@angular/common/http";
 
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { WeatherCardComponent } from './weather-card/weather-card.component';
+import { DeviceComponent } from './devices/device/device.component';
+import { ConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LampDeviceComponent } from './devices/lamp-device/lamp-device.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -30,6 +37,11 @@ import { WeatherCardComponent } from './weather-card/weather-card.component';
     RegisterComponent,
     HomeComponent,
     PageNotFoundComponent,
+    ConfirmDialogComponent,
+    PageNotFoundComponent,
+    NavbarComponent,
+    DeviceComponent,
+    LampDeviceComponent,
     WeatherCardComponent
   ],
   imports: [
@@ -47,7 +59,13 @@ import { WeatherCardComponent } from './weather-card/weather-card.component';
     MatDividerModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
