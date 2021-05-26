@@ -9,3 +9,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-card-header-text{
   width: 100% !important;
 }
+
+.mat-card {
+  margin-left: 1em;
+  margin-top: 1em;
+  float: left;
+}
