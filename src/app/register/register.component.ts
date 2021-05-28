@@ -30,14 +30,12 @@ export class RegisterComponent implements OnInit {
       const headers = {'content-type': 'application/json'}
       const payload = {email: values.email, password: values.password, username: values.username}
       const body = JSON.stringify(payload)
-      console.log("hello world")
       this.http.post("/api/user/register", body, {'headers':headers, observe: 'response'})
         .subscribe(resp => {
 
           if(resp.status == 201){
             const token : loginSucces = JSON.parse(JSON.stringify(resp.body))
             localStorage.setItem('jwttoken', token.access_token)
-            console.log(localStorage.getItem("jwttoken"))
             const redirectTo = resp.headers.get("location")
             this.router.navigate([redirectTo])
           }

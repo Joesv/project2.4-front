@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
           if(resp.status == 201){
             const token : loginSucces = JSON.parse(JSON.stringify(resp.body))
             localStorage.setItem('jwttoken', token.access_token)
-            console.log(localStorage.getItem("jwttoken"))
             const redirectTo = resp.headers.get("location")
             this.router.navigate([redirectTo])
           }
