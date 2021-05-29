@@ -26,6 +26,7 @@ export class RegisterComponent implements OnInit {
 
   register(){
     const values = this.form.value;
+    console.log(values)
     if(values.username && values.email && values.password && values.password2 && values.name && (values.password ===values.password2)){
       const headers = {'content-type': 'application/json'}
       const payload = {email: values.email, password: values.password, username: values.username}
@@ -33,11 +34,15 @@ export class RegisterComponent implements OnInit {
       this.http.post("/api/user/register", body, {'headers':headers, observe: 'response'})
         .subscribe(resp => {
 
+
           if(resp.status == 201){
             const token : loginSucces = JSON.parse(JSON.stringify(resp.body))
             localStorage.setItem('jwttoken', token.access_token)
             const redirectTo = resp.headers.get("location")
             this.router.navigate([redirectTo])
+          }
+          else if(resp.headers.get("location")){
+            this.router.navigate([resp.headers.get("location")])
           }
 
         })
