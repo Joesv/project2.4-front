@@ -23,6 +23,7 @@ export class WeatherCardComponent implements OnInit {
   state = 'collapsed';
 
   ngOnInit(): void {
+
     this.http.get<BuienRadarResponse>("https://data.buienradar.nl/2.0/feed/json", {responseType: 'json'})
       .subscribe(data => {
         data.actual.stationmeasurements.forEach(station => {
@@ -48,6 +49,11 @@ export class WeatherCardComponent implements OnInit {
             })
         }
       })
+    /*if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition( pos => {
+        console.log(pos)
+      })
+    }*/
 
   }
   toggle(): void {
