@@ -1,0 +1,38 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Add device</mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <form class="add-device-form">
+      <br>
+
+      <mat-form-field appearance="fill" floatLabel="always" class="full-width-form-field">
+        <mat-label>Device name</mat-label>
+        <input matInput placeholder="Ex. Living room light" value="">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" floatLabel="always" class="full-width-form-field">
+        <mat-label>Device description</mat-label>
+        <textarea matInput placeholder="Ex. The light in the center of..."></textarea>
+      </mat-form-field>
+
+      <mat-form-field style="width:6em;" appearance="fill" floatLabel="always">
+        <mat-select value="ws">
+          <mat-option value="ws">ws://</mat-option>
+          <mat-option value="wss">wss://</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Websocket address</mat-label>
+        <input matInput placeholder="1.1.1.1/lamp-a">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="create()">Create device</button>
+    <button mat-raised-button color="accent" (click)="cancel()">Cancel</button>
+
+  </mat-card-actions>
+</mat-card>

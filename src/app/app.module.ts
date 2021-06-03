@@ -30,6 +30,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import {WeatherCardComponent} from "./weather-card/weather-card.component";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import { AddDeviceComponent } from './add-device/add-device.component';
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -44,7 +46,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     NavbarComponent,
     DeviceComponent,
     LampDeviceComponent,
-    WeatherCardComponent
+    WeatherCardComponent,
+    AddDeviceComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     MatSnackBarModule,
     MatToolbarModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
