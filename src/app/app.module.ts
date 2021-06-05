@@ -30,6 +30,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import {WeatherCardComponent} from "./weather-card/weather-card.component";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import { NotificationTESTComponent } from './notification-test/notification-test.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     NavbarComponent,
     DeviceComponent,
     LampDeviceComponent,
-    WeatherCardComponent
+    WeatherCardComponent,
+    NotificationTESTComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerImmediately:30000'
     }),
     BrowserAnimationsModule,
     MatCardModule,
