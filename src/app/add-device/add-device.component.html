@@ -9,16 +9,16 @@
 
       <mat-form-field appearance="fill" floatLabel="always" class="full-width-form-field">
         <mat-label>Device name</mat-label>
-        <input matInput placeholder="Ex. Living room light" value="">
+        <input matInput placeholder="Ex. Living room light" value="" formControlName="name">
       </mat-form-field>
 
       <mat-form-field appearance="fill" floatLabel="always" class="full-width-form-field">
         <mat-label>Device description</mat-label>
-        <textarea matInput placeholder="Ex. The light in the center of..."></textarea>
+        <textarea matInput placeholder="Ex. The light in the center of..." formControlName="description"></textarea>
       </mat-form-field>
 
       <mat-form-field style="width:6em;" appearance="fill" floatLabel="always">
-        <mat-select value="ws">
+        <mat-select value="ws" formControlName="ws_protocol">
           <mat-option value="ws">ws://</mat-option>
           <mat-option value="wss">wss://</mat-option>
         </mat-select>
@@ -26,7 +26,7 @@
 
       <mat-form-field appearance="fill" floatLabel="always">
         <mat-label>Websocket address</mat-label>
-        <input matInput placeholder="1.1.1.1/lamp-a">
+        <input matInput placeholder="1.1.1.1/lamp-a" formControlName="ws_address">
       </mat-form-field>
 
       <br>
