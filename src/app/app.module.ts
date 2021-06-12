@@ -16,7 +16,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
 
-import { HttpClientModule} from "@angular/common/http";
+import { HttpClientModule} from '@angular/common/http';
 
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -28,9 +28,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LampDeviceComponent } from './devices/lamp-device/lamp-device.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-import {WeatherCardComponent} from "./weather-card/weather-card.component";
-import {MatToolbarModule} from "@angular/material/toolbar";
+import {WeatherCardComponent} from './weather-card/weather-card.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { NotificationTESTComponent } from './notification-test/notification-test.component';
+import { AddDeviceComponent } from './add-device/add-device.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { NotificationTESTComponent } from './notification-test/notification-test
     DeviceComponent,
     LampDeviceComponent,
     WeatherCardComponent,
-    NotificationTESTComponent
+    NotificationTESTComponent,
+    WeatherCardComponent,
+    AddDeviceComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +73,8 @@ import { NotificationTESTComponent } from './notification-test/notification-test
     MatSnackBarModule,
     MatToolbarModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
