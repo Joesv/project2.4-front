@@ -16,7 +16,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
 
-import { HttpClientModule} from "@angular/common/http";
+import { HttpClientModule} from '@angular/common/http';
 
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -28,10 +28,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LampDeviceComponent } from './devices/lamp-device/lamp-device.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-import {WeatherCardComponent} from "./weather-card/weather-card.component";
-import {MatToolbarModule} from "@angular/material/toolbar";
+import {WeatherCardComponent} from './weather-card/weather-card.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { NotificationTESTComponent } from './notification-test/notification-test.component';
 import { AddDeviceComponent } from './add-device/add-device.component';
-import {MatSelectModule} from "@angular/material/select";
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -47,6 +48,8 @@ import {MatSelectModule} from "@angular/material/select";
     DeviceComponent,
     LampDeviceComponent,
     WeatherCardComponent,
+    NotificationTESTComponent,
+    WeatherCardComponent,
     AddDeviceComponent
   ],
   imports: [
@@ -55,7 +58,7 @@ import {MatSelectModule} from "@angular/material/select";
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerImmediately:30000'
     }),
     BrowserAnimationsModule,
     MatCardModule,
@@ -70,8 +73,7 @@ import {MatSelectModule} from "@angular/material/select";
     MatSnackBarModule,
     MatToolbarModule,
     MatMenuModule,
-    MatIconModule,
-    MatSelectModule
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
