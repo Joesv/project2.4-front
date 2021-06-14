@@ -8,11 +8,12 @@ import {RegisterComponent} from './register/register.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {AboutComponent} from './about/about.component';
 import {WorkComponent} from './work/work.component';
-import {ProjectsComponent} from "./projects/projects.component";
+import {ProjectsComponent} from './projects/projects.component';
+import {AuthGuard} from './auth/auth.guard';
 
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
+  {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'about', component: AboutComponent},
