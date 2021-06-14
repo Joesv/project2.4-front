@@ -25,7 +25,7 @@ const routes: Routes = [
   {path: 'work', component: WorkComponent},
   {path: 'projects', component: ProjectsComponent},
 
-  {path: 'add-device', component: AddDeviceComponent},
+  {path: 'add-device', component: AddDeviceComponent, canActivate: [AuthGuard]},
 
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent},

@@ -40,6 +40,7 @@ import { ProjectsComponent } from './projects/projects.component';
 
 import { AddDeviceComponent } from './add-device/add-device.component';
 import {MatSelectModule} from '@angular/material/select';
+import {MatOptionModule} from '@angular/material/core';
 
 
 
@@ -65,31 +66,32 @@ import {MatSelectModule} from '@angular/material/select';
     AddDeviceComponent,
 
   ],
-  imports: [
-    BrowserModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-      // Register the ServiceWorker as soon as the app is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerImmediately:30000'
-    }),
-    BrowserAnimationsModule,
-    MatCardModule,
-    MatInputModule,
-    MatButtonModule,
-    MatDividerModule,
-    ReactiveFormsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    AppRoutingModule,
-    MatDialogModule,
-    MatSnackBarModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatIconModule,
-    RouterModule,
-    MatSelectModule,
-  ],
+    imports: [
+        BrowserModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: environment.production,
+            // Register the ServiceWorker as soon as the app is stable
+            // or after 30 seconds (whichever comes first).
+            registrationStrategy: 'registerImmediately:30000'
+        }),
+        BrowserAnimationsModule,
+        MatCardModule,
+        MatInputModule,
+        MatButtonModule,
+        MatDividerModule,
+        ReactiveFormsModule,
+        AppRoutingModule,
+        HttpClientModule,
+        AppRoutingModule,
+        MatDialogModule,
+        MatSnackBarModule,
+        MatToolbarModule,
+        MatMenuModule,
+        MatIconModule,
+        RouterModule,
+        MatSelectModule,
+        MatOptionModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
