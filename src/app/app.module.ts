@@ -57,14 +57,12 @@ import {MatSelectModule} from '@angular/material/select';
     LampDeviceComponent,
     WeatherCardComponent,
     NotificationTESTComponent,
-
     LogoutComponent,
     AboutComponent,
     WorkComponent,
     ProjectsComponent,
-
     WeatherCardComponent,
-    AddDeviceComponent
+    AddDeviceComponent,
 
   ],
   imports: [
@@ -89,11 +87,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,
-
-    RouterModule
-
-    MatSelectModule
-
+    RouterModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
