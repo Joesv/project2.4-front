@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators} from "@angular/forms";
-import { HttpClient } from "@angular/common/http";
-import { Router } from "@angular/router";
+import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +9,11 @@ import { Router } from "@angular/router";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  form:FormGroup
-  constructor(private fb:FormBuilder, private http : HttpClient, private router : Router) {
+  form: FormGroup;
+
+  email = new FormControl('', [Validators.required, Validators.email]);
+
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
@@ -20,26 +23,31 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login(){
+  login(): void {
     const values = this.form.value;
-    if(values.email && values.password){
-      //login
-      const headers = {'content-type': 'application/json'}
-      const payload = {email: values.email, password: values.password}
-      const body = JSON.stringify(payload)
-      this.http.post("/api/user/login", body, {'headers':headers, observe: 'response'})
+    if (values.email && values.password) {
+      const headers = {'content-type': 'application/json'};
+      const payload = {email: values.email, password: values.password};
+      const body = JSON.stringify(payload);
+      this.http.post('/api/user/login', body, {headers: headers, observe: 'response'})
         .subscribe(resp => {
-          if(resp.status == 201){
-            const token : loginSucces = JSON.parse(JSON.stringify(resp.body))
-            localStorage.setItem('jwttoken', token.access_token)
-            const redirectTo = resp.headers.get("location")
-            this.router.navigate([redirectTo])
+          if (resp.status === 201){
+            const token: loginSucces = JSON.parse(JSON.stringify(resp.body));
+            localStorage.setItem('jwttoken', token.access_token);
+            const redirectTo = resp.headers.get('location');
+            this.router.navigate([redirectTo]);
           }
 
-        })
+        });
     }
   }
 
+  getErrorMessage() {
+    if (this.email.hasError('required')) {
+      return 'You must enter a value';    }
+
+    return this.email.hasError('email') ? 'Not a valid email' : '';
+  }
 }
 
 export interface loginSucces {

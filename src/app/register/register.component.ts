@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import { Router } from "@angular/router";
 import {loginSucces} from "../login/login.component";
@@ -10,15 +10,17 @@ import {loginSucces} from "../login/login.component";
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  form:FormGroup
-  constructor(private fb:FormBuilder, private http:HttpClient, private router : Router) {
+  form: FormGroup;
+  email = new FormControl('', [Validators.required, Validators.email]);
+
+  constructor(private fb:FormBuilder, private http:HttpClient, private router: Router) {
     this.form = this.fb.group({
       username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
       password2: ['', Validators.required],
       name: ['', Validators.required],
-    })
+    });
   }
 
   ngOnInit(): void {
@@ -48,6 +50,12 @@ export class RegisterComponent implements OnInit {
 
         })
     }
+  }
+  getErrorMessage() {
+    if (this.email.hasError('required')) {
+      return 'You must enter a value';    }
+
+    return this.email.hasError('email') ? 'Not a valid email' : '';
   }
 
 }
