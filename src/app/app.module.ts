@@ -31,10 +31,15 @@ import { MatIconModule } from '@angular/material/icon';
 import {WeatherCardComponent} from './weather-card/weather-card.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { NotificationTESTComponent } from './notification-test/notification-test.component';
+
 import { LogoutComponent } from './logout/logout.component';
 import { AboutComponent } from './about/about.component';
 import { WorkComponent } from './work/work.component';
 import { ProjectsComponent } from './projects/projects.component';
+
+
+import { AddDeviceComponent } from './add-device/add-device.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -52,10 +57,15 @@ import { ProjectsComponent } from './projects/projects.component';
     LampDeviceComponent,
     WeatherCardComponent,
     NotificationTESTComponent,
+
     LogoutComponent,
     AboutComponent,
     WorkComponent,
     ProjectsComponent,
+
+    WeatherCardComponent,
+    AddDeviceComponent
+
   ],
   imports: [
     BrowserModule,
@@ -79,7 +89,11 @@ import { ProjectsComponent } from './projects/projects.component';
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,
+
     RouterModule
+
+    MatSelectModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
