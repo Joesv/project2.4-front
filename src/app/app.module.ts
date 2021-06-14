@@ -41,6 +41,8 @@ import { ProjectsComponent } from './projects/projects.component';
 import { AddDeviceComponent } from './add-device/add-device.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatOptionModule} from '@angular/material/core';
+import { ColoredLampComponent } from './devices/colored-lamp/colored-lamp.component';
+import { MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS } from '@angular-material-components/color-picker';
 
 
 
@@ -64,6 +66,7 @@ import {MatOptionModule} from '@angular/material/core';
     ProjectsComponent,
     WeatherCardComponent,
     AddDeviceComponent,
+    ColoredLampComponent,
 
   ],
     imports: [
@@ -91,8 +94,11 @@ import {MatOptionModule} from '@angular/material/core';
         RouterModule,
         MatSelectModule,
         MatOptionModule,
+        NgxMatColorPickerModule,
     ],
-  providers: [],
+  providers: [
+    { provide: MAT_COLOR_FORMATS, useValue: NGX_MAT_COLOR_FORMATS },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
