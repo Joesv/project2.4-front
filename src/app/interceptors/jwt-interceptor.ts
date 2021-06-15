@@ -21,7 +21,9 @@ export class JwtInterceptor implements HttpInterceptor {
 
     const idToken = localStorage.getItem('jwttoken');
 
+    // if request is in urlSkips, do nothing
     if (this.isUrlSkip(req.url)) {
+      console.log('skipping a request: ' + req.url);
       return next.handle(req);
     }
 
