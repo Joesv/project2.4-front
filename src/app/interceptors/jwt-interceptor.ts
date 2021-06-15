@@ -10,11 +10,20 @@ import { Observable } from 'rxjs';
  * else, send request through unmodified*/
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
+  urlSkips: Array<string>;
+
+  constructor() {
+    this.urlSkips = ['https://data.buienradar.nl/2.0/feed/json'];
+  }
 
   intercept(req: HttpRequest<any>,
             next: HttpHandler): Observable<HttpEvent<any>> {
 
     const idToken = localStorage.getItem('jwttoken');
+
+    if (this.isUrlSkip(req.url)) {
+      return next.handle(req);
+    }
 
     if (idToken) {
       const cloned = req.clone({
@@ -29,4 +38,16 @@ export class JwtInterceptor implements HttpInterceptor {
       return next.handle(req);
     }
   }
+
+  // check if url is in urlSkips list, return true or false
+  private isUrlSkip(url: string): boolean {
+    for (const urlSkip in this.urlSkips) {
+
+      if (url === this.urlSkips[urlSkip]) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
+
