@@ -16,7 +16,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
 
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './interceptors/jwt-interceptor';
 
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -28,15 +29,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LampDeviceComponent } from './devices/lamp-device/lamp-device.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-import {WeatherCardComponent} from './weather-card/weather-card.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { WeatherCardComponent } from './weather-card/weather-card.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { NotificationTESTComponent } from './notification-test/notification-test.component';
 
 import { LogoutComponent } from './logout/logout.component';
 import { AboutComponent } from './about/about.component';
 import { WorkComponent } from './work/work.component';
 import { ProjectsComponent } from './projects/projects.component';
-
 
 import { AddDeviceComponent } from './add-device/add-device.component';
 import {MatSelectModule} from '@angular/material/select';
@@ -90,7 +90,9 @@ import {MatSelectModule} from '@angular/material/select';
     RouterModule,
     MatSelectModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

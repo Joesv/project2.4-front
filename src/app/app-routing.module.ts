@@ -20,13 +20,10 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-
   {path: 'about', component: AboutComponent},
   {path: 'work', component: WorkComponent},
   {path: 'projects', component: ProjectsComponent},
-
   {path: 'add-device', component: AddDeviceComponent},
-
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent},
 ];
