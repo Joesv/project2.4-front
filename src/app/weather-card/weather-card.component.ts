@@ -16,7 +16,7 @@ import {HttpClient} from "@angular/common/http";
   ]
 })
 export class WeatherCardComponent implements OnInit {
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
   currentWeather: BuienRadarStation;
   precipitationForecast: precipitationEntry[];
 
