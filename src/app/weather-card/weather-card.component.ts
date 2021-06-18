@@ -1,6 +1,7 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {WeatherDataService, WeatherResponse} from "../weather-data.service";
 
 @Component({
   selector: 'app-weather-card',
@@ -16,14 +17,18 @@ import {HttpClient} from "@angular/common/http";
   ]
 })
 export class WeatherCardComponent implements OnInit {
-  constructor(private http: HttpClient) { }
+  constructor(private weatherService : WeatherDataService) { }
   currentWeather: BuienRadarStation;
   precipitationForecast: precipitationEntry[];
 
   state = 'collapsed';
 
   ngOnInit(): void {
+    this.weatherService.getWeatherData().subscribe((res: WeatherResponse) => {
+      console.log(res)
+    })
 
+  /*
     this.http.get<BuienRadarResponse>("https://data.buienradar.nl/2.0/feed/json", {responseType: 'json'})
       .subscribe(data => {
         data.actual.stationmeasurements.forEach(station => {
