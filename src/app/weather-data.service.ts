@@ -39,7 +39,7 @@ export interface entry {
   visibility: number;
   wind_speed: number;
   wind_deg: number;
-  weather: weather
+  weather: weather[]
   rain: rain
 }
 
