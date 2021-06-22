@@ -1,3 +1,22 @@
 mat-card {
   max-width: 380px;
+  margin: 1em;
+  display: inline-block;
+}
+
+mat-card-content {
+  margin-top: 1em;
+}
+
+.card-container-right {
+  display: inline;
+  float: right;
+}
+
+.card-container-left {
+  display: inline;
+}
+
+mat-card-content {
+  margin-top: 1em;
 }

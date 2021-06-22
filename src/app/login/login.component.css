@@ -1,8 +1,24 @@
 mat-card {
   max-width: 380px;
   margin: 15% auto auto;
+  text-align: center;
+}
+mat-card-title {
+  padding: 1em;
+}
+mat-form-field {
+  padding-top: 0.3em;
 }
 
 * {
   overflow:hidden;
+}
+
+.button {
+  /*TODO fix button spread*/
+  margin: 10em;
+}
+
+.no-account {
+  margin: 1em;
 }

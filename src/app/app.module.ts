@@ -16,7 +16,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
 
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './interceptors/jwt-interceptor';
 
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -28,18 +29,17 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LampDeviceComponent } from './devices/lamp-device/lamp-device.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-import {WeatherCardComponent} from './weather-card/weather-card.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { WeatherCardComponent } from './weather-card/weather-card.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { NotificationTESTComponent } from './notification-test/notification-test.component';
 
 import { LogoutComponent } from './logout/logout.component';
 import { AboutComponent } from './about/about.component';
-import { WorkComponent } from './work/work.component';
-import { ProjectsComponent } from './projects/projects.component';
-
 
 import { AddDeviceComponent } from './add-device/add-device.component';
 import {MatSelectModule} from '@angular/material/select';
+import { LoginLinkButtonComponent } from './login-link-button/login-link-button.component';
+import { HelpComponent } from './help/help.component';
 import {MatOptionModule} from '@angular/material/core';
 import { ColoredLampComponent } from './devices/colored-lamp/colored-lamp.component';
 import { MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS } from '@angular-material-components/color-picker';
@@ -62,42 +62,40 @@ import { MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS } fro
     NotificationTESTComponent,
     LogoutComponent,
     AboutComponent,
-    WorkComponent,
-    ProjectsComponent,
     WeatherCardComponent,
     AddDeviceComponent,
+    LoginLinkButtonComponent,
+    HelpComponent,
     ColoredLampComponent,
 
   ],
-    imports: [
-        BrowserModule,
-        ServiceWorkerModule.register('ngsw-worker.js', {
-            enabled: environment.production,
-            // Register the ServiceWorker as soon as the app is stable
-            // or after 30 seconds (whichever comes first).
-            registrationStrategy: 'registerImmediately:30000'
-        }),
-        BrowserAnimationsModule,
-        MatCardModule,
-        MatInputModule,
-        MatButtonModule,
-        MatDividerModule,
-        ReactiveFormsModule,
-        AppRoutingModule,
-        HttpClientModule,
-        AppRoutingModule,
-        MatDialogModule,
-        MatSnackBarModule,
-        MatToolbarModule,
-        MatMenuModule,
-        MatIconModule,
-        RouterModule,
-        MatSelectModule,
-        MatOptionModule,
-        NgxMatColorPickerModule,
-    ],
+  imports: [
+    BrowserModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerImmediately:30000'
+    }),
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
+    MatDividerModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    AppRoutingModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatIconModule,
+    RouterModule,
+    MatSelectModule,
+  ],
   providers: [
-    { provide: MAT_COLOR_FORMATS, useValue: NGX_MAT_COLOR_FORMATS },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })
