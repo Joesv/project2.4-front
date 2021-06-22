@@ -34,13 +34,12 @@ import { NotificationTESTComponent } from './notification-test/notification-test
 
 import { LogoutComponent } from './logout/logout.component';
 import { AboutComponent } from './about/about.component';
-import { WorkComponent } from './work/work.component';
-import { ProjectsComponent } from './projects/projects.component';
 
 
 import { AddDeviceComponent } from './add-device/add-device.component';
 import {MatSelectModule} from '@angular/material/select';
 import { LoginLinkButtonComponent } from './login-link-button/login-link-button.component';
+import { HelpComponent } from './help/help.component';
 
 
 
@@ -60,11 +59,10 @@ import { LoginLinkButtonComponent } from './login-link-button/login-link-button.
     NotificationTESTComponent,
     LogoutComponent,
     AboutComponent,
-    WorkComponent,
-    ProjectsComponent,
     WeatherCardComponent,
     AddDeviceComponent,
     LoginLinkButtonComponent,
+    HelpComponent,
 
   ],
   imports: [
