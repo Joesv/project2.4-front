@@ -40,6 +40,7 @@ import { AddDeviceComponent } from './add-device/add-device.component';
 import {MatSelectModule} from '@angular/material/select';
 import { LoginLinkButtonComponent } from './login-link-button/login-link-button.component';
 import { HelpComponent } from './help/help.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -63,6 +64,7 @@ import { HelpComponent } from './help/help.component';
     AddDeviceComponent,
     LoginLinkButtonComponent,
     HelpComponent,
+    FooterComponent,
 
   ],
   imports: [
