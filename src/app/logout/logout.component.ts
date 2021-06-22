@@ -15,6 +15,14 @@ export class LogoutComponent implements OnInit {
 
   logout(): void {
     localStorage.clear();
-    this.router.navigate(['/']);
+    if (this.router.url === '/home') {
+      this.router.navigate(['/']);
+    } else {
+      this.router.navigate(['/']);
+      // TODO reload button after click, then remove line of code above
+      /*this.router.navigateByUrl(this.router.url, { skipLocationChange: true }).then(() => {
+        this.router.navigate(['/about']);
+      });*/
+    }
   }
 }
