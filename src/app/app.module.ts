@@ -40,6 +40,7 @@ import { ProjectsComponent } from './projects/projects.component';
 
 import { AddDeviceComponent } from './add-device/add-device.component';
 import {MatSelectModule} from '@angular/material/select';
+import { LoginLinkButtonComponent } from './login-link-button/login-link-button.component';
 
 
 
@@ -63,6 +64,7 @@ import {MatSelectModule} from '@angular/material/select';
     ProjectsComponent,
     WeatherCardComponent,
     AddDeviceComponent,
+    LoginLinkButtonComponent,
 
   ],
   imports: [

@@ -11,21 +11,19 @@
           <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
         </mat-form-field>
       </p>
-
-
       <p>
         <mat-form-field>
           <input type="password" matInput placeholder="password" formControlName="password">
         </mat-form-field>
       </p>
-
     </form>
   </mat-card-content>
+
   <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="login()">Login!</button>
+    <button mat-raised-button class="button" color="primary" (click)="login()">Login!</button>
     <button
-      [routerLink]="['/home']"
-      mat-raised-button color="primary">HOME</button>
-    <p>No account yet? <button [routerLink]="['/register']" mat-button>Register!</button></p>
+      [routerLink]="['/about']"
+      mat-raised-button class="button" color="primary">About</button>
+    <p class="no-account">No account yet? <button [routerLink]="['/register']" mat-button>Register!</button></p>
   </mat-card-actions>
 </mat-card>
