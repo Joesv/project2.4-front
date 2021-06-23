@@ -41,8 +41,10 @@ import {MatSelectModule} from '@angular/material/select';
 import { LoginLinkButtonComponent } from './login-link-button/login-link-button.component';
 import { HelpComponent } from './help/help.component';
 import {MatOptionModule} from '@angular/material/core';
-import { ColoredLampComponent } from './devices/colored-lamp/colored-lamp.component';
 import { MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS } from '@angular-material-components/color-picker';
+import { CreateLampComponent } from './create-lamp/create-lamp.component';
+import { DeviceListComponent } from './device-list/device-list.component';
+import {CommonModule} from "@angular/common";
 
 
 
@@ -66,7 +68,8 @@ import { MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS } fro
     AddDeviceComponent,
     LoginLinkButtonComponent,
     HelpComponent,
-    ColoredLampComponent,
+    CreateLampComponent,
+    DeviceListComponent,
 
   ],
   imports: [
@@ -93,6 +96,7 @@ import { MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS } fro
     MatIconModule,
     RouterModule,
     MatSelectModule,
+    CommonModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
