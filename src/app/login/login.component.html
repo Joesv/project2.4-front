@@ -7,13 +7,13 @@
     <form [formGroup]="form">
       <p>
         <mat-form-field>
-          <input type="email" matInput placeholder="email"  [formControl]="email" required formControlName="email">
+          <input type="email" matInput placeholder="email"  [formControl]="email" required formControlName="email" (keydown.enter)="login()">
           <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
         </mat-form-field>
       </p>
       <p>
         <mat-form-field>
-          <input type="password" matInput placeholder="password" formControlName="password">
+          <input type="password" matInput placeholder="password" formControlName="password" (keydown.enter)="login()">
         </mat-form-field>
       </p>
     </form>
