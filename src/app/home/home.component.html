@@ -1,9 +1,11 @@
 <app-navbar></app-navbar>
 
-<app-lamp-device></app-lamp-device>
-<app-lamp-device></app-lamp-device>
-<app-lamp-device></app-lamp-device>
 <app-weather-card></app-weather-card>
 <app-notification-test></app-notification-test>
 
-<button mat-stroked-button [routerLink]="['/add-device']" >Create a new device</button>
+<br>
+<app-device-list></app-device-list>
+
+<br>
+<app-logout></app-logout>
+<button mat-stroked-button [routerLink]="['/create-lamp']" color="primary">Create a new lamp</button>

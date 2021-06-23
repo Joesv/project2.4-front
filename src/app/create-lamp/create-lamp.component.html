@@ -1,5 +1,5 @@
 <mat-card>
-  <form class="add-device-form" [formGroup]="form">
+  <form class="create-lamp-form" [formGroup]="form">
     <mat-card-header>
       <mat-card-title>Add device</mat-card-title>
     </mat-card-header>
@@ -18,22 +18,13 @@
       </mat-form-field>
 
       <mat-form-field appearance="fill" floatLabel="always" class="full-width-form-field">
-        <mat-label>Control type</mat-label>
-        <mat-select value="button" formControlName="control_type">
-          <mat-option value="button">Button</mat-option>
-          <mat-option value="color_picker">Color picker</mat-option>
-          <mat-option value="range">Range</mat-option>
-        </mat-select>
+        <mat-label>ON url</mat-label>
+        <input matInput placeholder="http://1.1.1.1/on" formControlName="on_url">
       </mat-form-field>
 
       <mat-form-field appearance="fill" floatLabel="always" class="full-width-form-field">
-        <mat-label>Control URL</mat-label>
-        <input matInput placeholder="http://1.1.1.1/update" formControlName="control_url">
-      </mat-form-field>
-
-      <mat-form-field appearance="fill" floatLabel="always" class="full-width-form-field">
-        <mat-label>Fetch URL</mat-label>
-        <input matInput placeholder="http://1.1.1.1/status" formControlName="fetch_url">
+        <mat-label>OFF url</mat-label>
+        <input matInput placeholder="http://1.1.1.1/off" formControlName="off_url">
       </mat-form-field>
 
     </mat-card-content>

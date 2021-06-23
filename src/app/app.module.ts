@@ -40,6 +40,11 @@ import { AddDeviceComponent } from './add-device/add-device.component';
 import {MatSelectModule} from '@angular/material/select';
 import { LoginLinkButtonComponent } from './login-link-button/login-link-button.component';
 import { HelpComponent } from './help/help.component';
+import {MatOptionModule} from '@angular/material/core';
+import { MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS } from '@angular-material-components/color-picker';
+import { CreateLampComponent } from './create-lamp/create-lamp.component';
+import { DeviceListComponent } from './device-list/device-list.component';
+import {CommonModule} from "@angular/common";
 
 
 
@@ -63,6 +68,8 @@ import { HelpComponent } from './help/help.component';
     AddDeviceComponent,
     LoginLinkButtonComponent,
     HelpComponent,
+    CreateLampComponent,
+    DeviceListComponent,
 
   ],
   imports: [
@@ -89,6 +96,7 @@ import { HelpComponent } from './help/help.component';
     MatIconModule,
     RouterModule,
     MatSelectModule,
+    CommonModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
