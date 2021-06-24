@@ -1,0 +1,15 @@
+.spacer {
+  flex-shrink: 1;
+  flex-grow: 1;
+  flex-basis: auto;
+}
+
+.mat-toolbar {
+  background-color: lightgrey;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: medium;
+}
+

@@ -1,5 +1,6 @@
 <mat-card *ngIf="!deleted" [@fadeInOut]>
   <mat-card-header>
+    <div mat-card-avatar *ngIf="avatar !== undefined" [style.background-image]="'url('+avatar + ')'" class="avatar"></div>
     <mat-card-title class="card-container-left">{{ deviceTitle }}</mat-card-title>
 
     <mat-card-title class="card-container-right">
@@ -18,7 +19,7 @@
       </mat-menu>
     </mat-card-title>
 
-    <mat-card-subtitle>{{ deviceType }}</mat-card-subtitle>
+    <mat-card-subtitle *ngIf="avatar === undefined">{{ deviceType }}</mat-card-subtitle>
   </mat-card-header>
   <mat-divider></mat-divider>
   <mat-card-content>
