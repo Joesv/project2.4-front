@@ -1,3 +1,5 @@
-<app-device [deviceTitle]="lamp.name" deviceType="Lamp">
-  {{ lamp.description }}
+<app-device [deviceTitle]="lamp.name" (onDelete)="deleteLamp()" deviceType="Lamp">
+  This lamp is currently {{ lamp.last_status == '1' ? 'on' : 'off' }}.<br>
+  <br>
+  <mat-slide-toggle [checked]="lamp.last_status == '1'" (change)="changeStatus($event.checked)"></mat-slide-toggle>
 </app-device>

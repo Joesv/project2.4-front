@@ -48,6 +48,7 @@ import { DeviceListComponent } from './device-list/device-list.component';
 import {CommonModule} from "@angular/common";
 import { CreateDummyComponent } from './create-dummy/create-dummy.component';
 import { DummyDeviceComponent } from './devices/dummy-device/dummy-device.component';
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 
 
 

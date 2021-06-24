@@ -1,16 +1,6 @@
-<mat-card>
-  <ng-container *ngIf="currentWeather!=undefined">
-    <mat-card-header>
-      <div mat-card-avatar [style.background-image]="'url('+iconUrl + ')'" class="avatar"></div>
-      <mat-card-title> {{currentWeather.current.weather[0].description | titlecase}} </mat-card-title>
-    </mat-card-header>
-    <mat-divider></mat-divider>
+
+  <app-device *ngIf="currentWeather!==undefined" deviceTitle="{{currentWeather.current.weather[0].description}}" avatar="{{iconUrl}}">
     <mat-card-content>
       <p>It's currently {{currentWeather.current.temp}} degrees Celsius, which feels like {{currentWeather.current.feels_like}} degrees Celsius.</p>
-      <!-- //TODO
-      More info
-      -->
     </mat-card-content>
-
-  </ng-container>
-</mat-card>
+  </app-device>

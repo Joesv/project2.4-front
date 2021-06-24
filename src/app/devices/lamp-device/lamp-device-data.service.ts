@@ -25,4 +25,5 @@ export interface LampDeviceResponse {
   description: string;
   on_url: string;
   off_url: string;
+  last_status: string;
 }

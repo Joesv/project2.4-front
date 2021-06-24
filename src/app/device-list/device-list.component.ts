@@ -23,7 +23,6 @@ export class DeviceListComponent implements OnInit {
   ngOnInit(): void {
     this.lampDeviceDataService.getLampDevices().subscribe((res: LampDevicesResponse) => {
       this.lamps = res.lamps;
-      console.log(this.lamps);
     });
     this.dummyDeviceDataService.getDummyDevices().subscribe((res: DummyDevicesResponse) => {
       this.dummys = res.dummys;
