@@ -106,6 +106,7 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
     RouterModule,
     MatSelectModule,
     CommonModule,
+    MatSlideToggleModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
