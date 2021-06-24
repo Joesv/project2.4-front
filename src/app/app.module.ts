@@ -46,6 +46,8 @@ import { MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS } fro
 import { CreateLampComponent } from './create-lamp/create-lamp.component';
 import { DeviceListComponent } from './device-list/device-list.component';
 import {CommonModule} from "@angular/common";
+import { CreateDummyComponent } from './create-dummy/create-dummy.component';
+import { DummyDeviceComponent } from './devices/dummy-device/dummy-device.component';
 
 
 
@@ -73,6 +75,8 @@ import {CommonModule} from "@angular/common";
     FooterComponent,
     CreateLampComponent,
     DeviceListComponent,
+    CreateDummyComponent,
+    DummyDeviceComponent,
 
 
   ],
