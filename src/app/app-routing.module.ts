@@ -8,12 +8,11 @@ import {RegisterComponent} from './register/register.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
 import {AboutComponent} from './about/about.component';
-import {WorkComponent} from './work/work.component';
-import {ProjectsComponent} from './projects/projects.component';
 import {AuthGuard} from './auth/auth.guard';
 
-
 import {AddDeviceComponent} from './add-device/add-device.component';
+import {HelpComponent} from './help/help.component';
+import {CreateLampComponent} from './create-lamp/create-lamp.component';
 
 
 const routes: Routes = [
@@ -21,9 +20,12 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'work', component: WorkComponent},
-  {path: 'projects', component: ProjectsComponent},
-  {path: 'add-device', component: AddDeviceComponent},
+
+  {path: 'help', component: HelpComponent},
+
+  {path: 'add-device', component: AddDeviceComponent, canActivate: [AuthGuard]},
+  {path: 'create-lamp', component: CreateLampComponent, canActivate: [AuthGuard]},
+
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent},
 ];

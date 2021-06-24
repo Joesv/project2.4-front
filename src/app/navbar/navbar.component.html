@@ -9,10 +9,15 @@
         <a href="about">About</a>
       </li>
       <li>
-        <a href="work">Work</a>
+        <a href="help">Help</a>
       </li>
       <li>
-        <a href="projects">Projects</a>
+        <ng-container *ngIf="keyExists">
+          <app-logout></app-logout>
+        </ng-container>
+        <ng-container *ngIf="!keyExists">
+          <app-login-link-button></app-login-link-button>
+        </ng-container>
       </li>
     </ul>
 </mat-toolbar>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {WeatherDataService, WeatherResponse} from "../weather-data.service";
+import {WeatherDataService, WeatherResponse} from '../weather-data.service';
 
 @Component({
   selector: 'app-weather-card',
@@ -7,7 +7,7 @@ import {WeatherDataService, WeatherResponse} from "../weather-data.service";
   styleUrls: ['./weather-card.component.css'],
 })
 export class WeatherCardComponent implements OnInit {
-  constructor(private weatherService : WeatherDataService) { }
+  constructor(private weatherService: WeatherDataService) { }
   currentWeather: WeatherResponse;
   iconUrl: string;
 
@@ -15,9 +15,7 @@ export class WeatherCardComponent implements OnInit {
     this.weatherService.getWeatherData().subscribe((res: WeatherResponse) => {
       this.iconUrl = `https://openweathermap.org/img/wn/${res.current.weather[0].icon}.png`;
       this.currentWeather = res;
-    })
-
-
+    });
   }
 }
 

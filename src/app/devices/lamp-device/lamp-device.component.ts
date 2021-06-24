@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {LampDeviceResponse} from './lamp-device-data.service';
 
 @Component({
   selector: 'app-lamp-device',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lamp-device.component.css']
 })
 export class LampDeviceComponent implements OnInit {
+  @Input() lamp: LampDeviceResponse;
 
   constructor() { }
 
