@@ -1,0 +1,30 @@
+mat-card::ng-deep.mat-card-header-text {
+  width: 100%;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  > div {
+    flex: 50%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: lightskyblue;
+  }
+  > .temp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    margin-right: 10px;
+  }
+}
+
+.big-text {
+  font-size: 30px;
+}
+
+.image {
+  height: 100px;
+}

@@ -7,10 +7,10 @@ import {Observable} from "rxjs";
 })
 export class WeatherDataService {
 
-  constructor(private httpClient : HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   getWeatherData(): Observable<WeatherResponse>{
-    return this.httpClient.get<WeatherResponse>("/api/device/weather");
+    return this.httpClient.get<WeatherResponse>('/api/device/weather');
   }
 
 
