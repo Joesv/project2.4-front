@@ -46,6 +46,7 @@ import { MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS } fro
 import { CreateLampComponent } from './create-lamp/create-lamp.component';
 import { DeviceListComponent } from './device-list/device-list.component';
 import {CommonModule} from "@angular/common";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 
 
 
@@ -76,32 +77,33 @@ import {CommonModule} from "@angular/common";
 
 
   ],
-  imports: [
-    BrowserModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-      // Register the ServiceWorker as soon as the app is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerImmediately:30000'
-    }),
-    BrowserAnimationsModule,
-    MatCardModule,
-    MatInputModule,
-    MatButtonModule,
-    MatDividerModule,
-    ReactiveFormsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    AppRoutingModule,
-    MatDialogModule,
-    MatSnackBarModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatIconModule,
-    RouterModule,
-    MatSelectModule,
-    CommonModule,
-  ],
+    imports: [
+        BrowserModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: environment.production,
+            // Register the ServiceWorker as soon as the app is stable
+            // or after 30 seconds (whichever comes first).
+            registrationStrategy: 'registerImmediately:30000'
+        }),
+        BrowserAnimationsModule,
+        MatCardModule,
+        MatInputModule,
+        MatButtonModule,
+        MatDividerModule,
+        ReactiveFormsModule,
+        AppRoutingModule,
+        HttpClientModule,
+        AppRoutingModule,
+        MatDialogModule,
+        MatSnackBarModule,
+        MatToolbarModule,
+        MatMenuModule,
+        MatIconModule,
+        RouterModule,
+        MatSelectModule,
+        CommonModule,
+        MatSlideToggleModule,
+    ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
   ],
