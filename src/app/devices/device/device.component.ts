@@ -24,6 +24,7 @@ import {MatMenuTrigger} from '@angular/material/menu';
 export class DeviceComponent implements OnInit {
   @Input() deviceTitle: string;
   @Input() deviceType: string;
+  @Input() avatar?: string;
   deleted = false;
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
