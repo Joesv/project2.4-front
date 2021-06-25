@@ -1,12 +1,14 @@
 <app-navbar></app-navbar>
+<main>
+  <app-weather-card></app-weather-card>
 
-<app-weather-card></app-weather-card>
+  <app-device-list></app-device-list>
 
-<app-device-list></app-device-list>
+  <br>
+  <app-notification-test></app-notification-test>
 
-<br>
-<app-notification-test></app-notification-test>
+  <button mat-stroked-button [routerLink]="['/create-lamp']" color="primary">Create a new lamp</button>
+  <app-footer></app-footer>
+</main>
 
-<button mat-stroked-button [routerLink]="['/create-lamp']" color="primary">Create a new lamp</button>
-<app-footer></app-footer>
 
