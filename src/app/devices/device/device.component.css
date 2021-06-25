@@ -1,9 +1,11 @@
 mat-card {
-  width: 380px;
+  width: 400px;
   margin: 1em;
   display: inline-block;
 }
-
+mat-card-title {
+  text-align: center;
+}
 mat-card-content {
   margin-top: 1em;
 }
@@ -15,5 +17,6 @@ mat-card-content {
 
 .card-container-left {
   display: inline;
+  text-align: right;
 }
 

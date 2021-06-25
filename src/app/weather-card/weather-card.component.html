@@ -1,6 +1,25 @@
-
-  <app-device *ngIf="currentWeather!==undefined" deviceTitle="{{currentWeather.current.weather[0].description}}" avatar="{{iconUrl}}">
-    <mat-card-content>
-      <p>It's currently {{currentWeather.current.temp}} degrees Celsius, which feels like {{currentWeather.current.feels_like}} degrees Celsius.</p>
-    </mat-card-content>
-  </app-device>
+<app-device *ngIf="currentWeather!==undefined" deviceTitle="Current Weather" avatar="{{iconUrl}}">
+  <!--<mat-card-content>
+    <p>The current temperature is {{currentTemp}} degrees Celsius.
+      <br>The 'feels like' temperature is {{feelsLikeTemp}} degrees Celsius.</p>
+  </mat-card-content>-->
+  <!--<mat-card class="mat-elevation-z0">
+    <mat-card-header>
+      <mat-card-title>London's weather</mat-card-title>
+      <mat-card-subtitle>Today: July 10, 2020</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>-->
+  <mat-card-content>
+    <div class="flex-row">
+    <div class="temp">
+      <span class="big-text">{{currentTemp}} C</span>
+      <span>Feels like </span>
+      <span>{{feelsLikeTemp}} C</span>
+    </div>
+    <div class="outlook">
+      <img src="{{iconUrl}}" />
+      <span>{{currentWeather.current.weather[0].description}}</span>
+    </div>
+    </div>
+  </mat-card-content>
+</app-device>
