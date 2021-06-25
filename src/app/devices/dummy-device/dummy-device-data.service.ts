@@ -19,7 +19,7 @@ export interface DummyDevicesResponse {
 
 export interface DummyDeviceResponse {
   id: number;
-  dummy_id: number;
+  dummy_type: string;
   user_id: number;
   name: string;
   description: string;
