@@ -1,3 +1,8 @@
 .mat-stroked-button {
   background-color: white;
 }
+
+main {
+  background: linear-gradient(to right top, lightgrey, white);
+  min-height: 100vh;
+}

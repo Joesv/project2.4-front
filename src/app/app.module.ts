@@ -50,6 +50,7 @@ import { CreateDummyComponent } from './create-dummy/create-dummy.component';
 import { DummyDeviceComponent } from './devices/dummy-device/dummy-device.component';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import { CreateWeathercardComponent } from './create-weathercard/create-weathercard.component';
+import {MatSlider, MatSliderModule} from "@angular/material/slider";
 
 
 
@@ -109,6 +110,7 @@ import { CreateWeathercardComponent } from './create-weathercard/create-weatherc
     MatSelectModule,
     CommonModule,
     MatSlideToggleModule,
+    MatSliderModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

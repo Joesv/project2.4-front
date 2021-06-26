@@ -16,7 +16,7 @@ export class CreateDummyComponent implements OnInit {
   constructor(private location: Location, private fb: FormBuilder, private http: HttpClient,
               private router: Router, private snackBar: MatSnackBar) {
     this.form = this.fb.group({
-      dummy_id: ['', [Validators.required]],
+      dummy_type: ['', [Validators.required]],
       name: ['', [Validators.required]],
       description: ['', Validators.required]
     });
