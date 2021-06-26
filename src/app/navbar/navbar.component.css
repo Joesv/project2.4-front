@@ -4,30 +4,13 @@
   box-sizing: border-box;
 }
 
-.spacer{
-  flex: 1 1 auto;
+mat-toolbar {
+  width: 100vw;
 }
 
-
-.nav-links{
+.outlineRight{
   position: absolute;
   display: flex;
   justify-content: space-around;
-  width: 50%;
-  right: 3em;
-}
-
-.nav-links li{
-  list-style: none;
-}
-
-.nav-links a{
-  color: lightgray;
-  text-decoration: none;
-  letter-spacing: 2px;
-  font-size: 15px;
-}
-
-.nav-links a:hover {
-  color: white;
+  right: 1em;
 }
