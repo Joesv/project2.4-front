@@ -49,6 +49,7 @@ import {CommonModule} from "@angular/common";
 import { CreateDummyComponent } from './create-dummy/create-dummy.component';
 import { DummyDeviceComponent } from './devices/dummy-device/dummy-device.component';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import { CreateWeathercardComponent } from './create-weathercard/create-weathercard.component';
 
 
 
@@ -78,6 +79,7 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
     DeviceListComponent,
     CreateDummyComponent,
     DummyDeviceComponent,
+    CreateWeathercardComponent,
 
 
   ],
