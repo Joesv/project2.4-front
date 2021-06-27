@@ -9,6 +9,11 @@ import {
   DummyDeviceResponse,
   DummyDevicesResponse
 } from '../devices/dummy-device/dummy-device-data.service';
+import {
+  WeathercardDataService,
+  WeatherCardResponse,
+  WeatherCards
+} from "../devices/weather-card/weathercard-data.service";
 
 @Component({
   selector: 'app-device-list',
@@ -18,7 +23,8 @@ import {
 export class DeviceListComponent implements OnInit {
   lamps: Array<LampDeviceResponse> = [];
   dummys: Array<DummyDeviceResponse> = [];
-  constructor(private lampDeviceDataService: LampDeviceDataService, private dummyDeviceDataService: DummyDeviceDataService) { }
+  weathercards: Array<WeatherCardResponse> = [];
+  constructor(private lampDeviceDataService: LampDeviceDataService, private dummyDeviceDataService: DummyDeviceDataService, private weatherCardDataService: WeathercardDataService) { }
 
   ngOnInit(): void {
     this.lampDeviceDataService.getLampDevices().subscribe((res: LampDevicesResponse) => {
@@ -28,6 +34,12 @@ export class DeviceListComponent implements OnInit {
       this.dummys = res.dummys;
       console.log(this.dummys);
     });
+    this.weatherCardDataService.getWeatherCards().subscribe((res: WeatherCards) => {
+      this.weathercards = res.weatherCards;
+      console.log("weather cards: ")
+      console.log(res)
+    })
+
   }
 
 }

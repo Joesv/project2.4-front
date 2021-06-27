@@ -29,7 +29,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LampDeviceComponent } from './devices/lamp-device/lamp-device.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-import { WeatherCardComponent } from './weather-card/weather-card.component';
+import { WeatherCardComponent } from './devices/weather-card/weather-card.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NotificationTESTComponent } from './notification-test/notification-test.component';
 
