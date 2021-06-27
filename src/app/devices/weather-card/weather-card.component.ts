@@ -14,9 +14,11 @@ export class WeatherCardComponent implements OnInit {
   currentWeather: WeatherResponse;
   currentTemp: string;
   feelsLikeTemp: number;
+  title: string = "Current weather"
   iconUrl: string;
 
   ngOnInit(): void {
+    this.title = `Current weather in ${this.card.locationname}`;
     this.weatherService.getWeatherData(this.card.id).subscribe((res: WeatherResponse) => {
       this.iconUrl = `https://openweathermap.org/img/wn/${res.current.weather[0].icon}.png`;
       this.currentWeather = res;

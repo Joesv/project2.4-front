@@ -1,14 +1,4 @@
-<app-device *ngIf="currentWeather!==undefined" deviceTitle="Current Weather">
-  <!--<mat-card-content>
-    <p>The current temperature is {{currentTemp}} degrees Celsius.
-      <br>The 'feels like' temperature is {{feelsLikeTemp}} degrees Celsius.</p>
-  </mat-card-content>-->
-  <!--<mat-card class="mat-elevation-z0">
-    <mat-card-header>
-      <mat-card-title>London's weather</mat-card-title>
-      <mat-card-subtitle>Today: July 10, 2020</mat-card-subtitle>
-    </mat-card-header>
-  </mat-card>-->
+<app-device *ngIf="currentWeather!==undefined" deviceTitle="{{title}}">
   <mat-card-content>
     <div class="flex-row">
     <div class="temp">
