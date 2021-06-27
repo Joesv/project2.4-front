@@ -9,8 +9,8 @@ export class WeatherDataService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getWeatherData(): Observable<WeatherResponse>{
-    return this.httpClient.get<WeatherResponse>('/api/device/weather');
+  getWeatherData(id: number): Observable<WeatherResponse>{
+    return this.httpClient.get<WeatherResponse>(`/api/device/weather/${id}`);
   }
 
 

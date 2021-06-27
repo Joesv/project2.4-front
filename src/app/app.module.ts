@@ -29,7 +29,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LampDeviceComponent } from './devices/lamp-device/lamp-device.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-import { WeatherCardComponent } from './weather-card/weather-card.component';
+import { WeatherCardComponent } from './devices/weather-card/weather-card.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NotificationTESTComponent } from './notification-test/notification-test.component';
 
@@ -49,6 +49,7 @@ import {CommonModule} from "@angular/common";
 import { CreateDummyComponent } from './create-dummy/create-dummy.component';
 import { DummyDeviceComponent } from './devices/dummy-device/dummy-device.component';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import { CreateWeathercardComponent } from './create-weathercard/create-weathercard.component';
 import {MatSlider, MatSliderModule} from "@angular/material/slider";
 
 
@@ -79,6 +80,7 @@ import {MatSlider, MatSliderModule} from "@angular/material/slider";
     DeviceListComponent,
     CreateDummyComponent,
     DummyDeviceComponent,
+    CreateWeathercardComponent,
 
 
   ],

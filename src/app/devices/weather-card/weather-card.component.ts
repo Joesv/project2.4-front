@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {WeatherDataService, WeatherResponse} from '../weather-data.service';
+import { Component, Input, OnInit } from '@angular/core';
+import {WeatherDataService, WeatherResponse} from '../../weather-data.service';
+import {WeatherCardResponse} from "./weathercard-data.service";
 
 @Component({
   selector: 'app-weather-card',
@@ -7,14 +8,18 @@ import {WeatherDataService, WeatherResponse} from '../weather-data.service';
   styleUrls: ['./weather-card.component.scss'],
 })
 export class WeatherCardComponent implements OnInit {
+  @Input() card: WeatherCardResponse
+
   constructor(private weatherService: WeatherDataService) { }
   currentWeather: WeatherResponse;
   currentTemp: string;
   feelsLikeTemp: number;
+  title: string = "Current weather"
   iconUrl: string;
 
   ngOnInit(): void {
-    this.weatherService.getWeatherData().subscribe((res: WeatherResponse) => {
+    this.title = `Current weather in ${this.card.locationname}`;
+    this.weatherService.getWeatherData(this.card.id).subscribe((res: WeatherResponse) => {
       this.iconUrl = `https://openweathermap.org/img/wn/${res.current.weather[0].icon}.png`;
       this.currentWeather = res;
       this.currentTemp = this.currentWeather.current.temp.toFixed(1);

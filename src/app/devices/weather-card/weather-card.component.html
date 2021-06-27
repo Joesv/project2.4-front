@@ -1,0 +1,15 @@
+<app-device *ngIf="currentWeather!==undefined" deviceTitle="{{title}}">
+  <mat-card-content>
+    <div class="flex-row">
+    <div class="temp">
+      <span class="big-text">{{currentTemp}} C</span>
+      <span>Feels like </span>
+      <span>{{feelsLikeTemp}} C</span>
+    </div>
+    <div class="outlook">
+      <img src="{{iconUrl}}" />
+      <span>{{currentWeather.current.weather[0].description}}</span>
+    </div>
+    </div>
+  </mat-card-content>
+</app-device>
