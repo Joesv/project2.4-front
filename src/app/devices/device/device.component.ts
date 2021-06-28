@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {ConfirmDialogComponent} from '../../dialogs/confirm-dialog/confirm-dialog.component';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
@@ -27,6 +27,8 @@ export class DeviceComponent implements OnInit {
   @Input() avatar?: string;
   deleted = false;
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
+
+  @Output() onDelete: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(
     private snackBar: MatSnackBar,
@@ -68,6 +70,7 @@ export class DeviceComponent implements OnInit {
         if (!dismiss.dismissedByAction) {
           // User hasn't pressed undo, so actually delete.
           console.log(`Delete device ${this.deviceTitle}`);
+          this.onDelete.emit();
         }
       });
     });

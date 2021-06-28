@@ -29,7 +29,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LampDeviceComponent } from './devices/lamp-device/lamp-device.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-import { WeatherCardComponent } from './weather-card/weather-card.component';
+import { WeatherCardComponent } from './devices/weather-card/weather-card.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NotificationTESTComponent } from './notification-test/notification-test.component';
 
@@ -45,7 +45,15 @@ import { MatOptionModule } from '@angular/material/core';
 import { MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS } from '@angular-material-components/color-picker';
 import { CreateLampComponent } from './create-lamp/create-lamp.component';
 import { DeviceListComponent } from './device-list/device-list.component';
+
 import { CommonModule } from '@angular/common';
+
+import { CreateDummyComponent } from './create-dummy/create-dummy.component';
+import { DummyDeviceComponent } from './devices/dummy-device/dummy-device.component';
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import { CreateWeathercardComponent } from './create-weathercard/create-weathercard.component';
+import {MatSlider, MatSliderModule} from "@angular/material/slider";
+
 
 
 
@@ -72,6 +80,10 @@ import { CommonModule } from '@angular/common';
     NavbarComponent,
     DeviceComponent,
     LampDeviceComponent,
+    CreateDummyComponent,
+    DummyDeviceComponent,
+    CreateWeathercardComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -98,6 +110,8 @@ import { CommonModule } from '@angular/common';
     RouterModule,
     MatSelectModule,
     CommonModule,
+    MatSlideToggleModule,
+    MatSliderModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

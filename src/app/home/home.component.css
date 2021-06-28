@@ -1,3 +1,15 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
 .mat-stroked-button {
   background-color: white;
+}
+
+main {
+  background: linear-gradient(to right top, lightgrey, white);
+  min-height: 100vh;
+  width: 100vw;
 }

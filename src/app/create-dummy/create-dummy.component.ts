@@ -6,20 +6,19 @@ import {Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
-  selector: 'app-create-lamp',
-  templateUrl: './create-lamp.component.html',
-  styleUrls: ['./create-lamp.component.css']
+  selector: 'app-create-dummy',
+  templateUrl: './create-dummy.component.html',
+  styleUrls: ['./create-dummy.component.css']
 })
-export class CreateLampComponent implements OnInit {
+export class CreateDummyComponent implements OnInit {
   form: FormGroup;
 
   constructor(private location: Location, private fb: FormBuilder, private http: HttpClient,
               private router: Router, private snackBar: MatSnackBar) {
     this.form = this.fb.group({
+      dummy_type: ['', [Validators.required]],
       name: ['', [Validators.required]],
-      description: ['', Validators.required],
-      on_url: ['', Validators.required],
-      off_url: ['', Validators.required]
+      description: ['', Validators.required]
     });
   }
 
@@ -35,10 +34,10 @@ export class CreateLampComponent implements OnInit {
     console.log(this.form.value);
     const body = JSON.stringify(this.form.value);
     console.log(body);
-    this.http.post('/api/lamp_device/', body, {headers, observe: 'response'})
+    this.http.post('/api/dummy_device/', body, {headers, observe: 'response'})
       .subscribe(resp => {
         if (resp.status === 201) {
-          const snackBarRef = this.snackBar.open(`Created lamp ${this.form.value.name}.`, 'OK', {
+          const snackBarRef = this.snackBar.open(`Created device ${this.form.value.name}.`, 'OK', {
             duration: 1500
           });
 

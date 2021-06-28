@@ -19,7 +19,7 @@
       </mat-menu>
     </mat-card-title>
 
-    <mat-card-subtitle *ngIf="avatar === undefined">{{ deviceType }}</mat-card-subtitle>
+    <mat-card-subtitle *ngIf="deviceType !== 'Unknown type'">{{ deviceType }}</mat-card-subtitle>
   </mat-card-header>
   <mat-divider></mat-divider>
   <mat-card-content>
