@@ -10,11 +10,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatDividerModule } from '@angular/material/divider';
 import { RegisterComponent } from './register/register.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import {RouterModule} from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './interceptors/jwt-interceptor';
@@ -36,21 +36,24 @@ import { NotificationTESTComponent } from './notification-test/notification-test
 import { LogoutComponent } from './logout/logout.component';
 import { AboutComponent } from './about/about.component';
 import { AddDeviceComponent } from './add-device/add-device.component';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { LoginLinkButtonComponent } from './login-link-button/login-link-button.component';
 import { HelpComponent } from './help/help.component';
 import { FooterComponent } from './footer/footer.component';
 
-import {MatOptionModule} from '@angular/material/core';
+import { MatOptionModule } from '@angular/material/core';
 import { MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS } from '@angular-material-components/color-picker';
 import { CreateLampComponent } from './create-lamp/create-lamp.component';
 import { DeviceListComponent } from './device-list/device-list.component';
-import {CommonModule} from "@angular/common";
+
+import { CommonModule } from '@angular/common';
+
 import { CreateDummyComponent } from './create-dummy/create-dummy.component';
 import { DummyDeviceComponent } from './devices/dummy-device/dummy-device.component';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import { CreateWeathercardComponent } from './create-weathercard/create-weathercard.component';
 import {MatSlider, MatSliderModule} from "@angular/material/slider";
+
 
 
 
@@ -63,10 +66,6 @@ import {MatSlider, MatSliderModule} from "@angular/material/slider";
     HomeComponent,
     PageNotFoundComponent,
     ConfirmDialogComponent,
-    PageNotFoundComponent,
-    NavbarComponent,
-    DeviceComponent,
-    LampDeviceComponent,
     WeatherCardComponent,
     NotificationTESTComponent,
     LogoutComponent,
@@ -78,10 +77,12 @@ import {MatSlider, MatSliderModule} from "@angular/material/slider";
     FooterComponent,
     CreateLampComponent,
     DeviceListComponent,
+    NavbarComponent,
+    DeviceComponent,
+    LampDeviceComponent,
     CreateDummyComponent,
     DummyDeviceComponent,
     CreateWeathercardComponent,
-
 
   ],
   imports: [
