@@ -47,7 +47,6 @@ import { CreateLampComponent } from './create-lamp/create-lamp.component';
 import { DeviceListComponent } from './device-list/device-list.component';
 
 import { CommonModule } from '@angular/common';
-
 import { CreateDummyComponent } from './create-dummy/create-dummy.component';
 import { DummyDeviceComponent } from './devices/dummy-device/dummy-device.component';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
@@ -55,7 +54,8 @@ import { CreateWeathercardComponent } from './create-weathercard/create-weatherc
 import {MatSlider, MatSliderModule} from "@angular/material/slider";
 
 
-
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 
 
 @NgModule({
@@ -112,6 +112,10 @@ import {MatSlider, MatSliderModule} from "@angular/material/slider";
     CommonModule,
     MatSlideToggleModule,
     MatSliderModule,
+    ShareButtonsModule.withConfig({
+      debug: true
+    }),
+    ShareIconsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

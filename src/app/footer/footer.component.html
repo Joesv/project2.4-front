@@ -1,7 +1,17 @@
 <mat-toolbar>
   <span>Footsie © 2021 Copyright</span>
   <span class="spacer"></span>
-  <button mat-icon-button class="example-icon" >
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
     <mat-icon>share</mat-icon>
   </button>
+  <mat-menu #menu="matMenu">
+    <share-buttons [theme]="'modern-light'"
+                   [include]="['facebook','twitter','whatsapp','linkedin','pinterest','reddit','messenger','email','copy']"
+                   [show]="6"
+                   [size]="1"
+                   [url]="'https://www.GeewgleHeum.com/'"
+                   [image] ="'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Google_Home_with_Home_Hub_and_Home_Mini_on_table.jpg/1200px-Google_Home_with_Home_Hub_and_Home_Mini_on_table.jpg'"
+                   [autoSetMeta]="false"
+    ></share-buttons>
+  </mat-menu>
 </mat-toolbar>
