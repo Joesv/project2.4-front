@@ -56,6 +56,8 @@ import {MatSlider, MatSliderModule} from "@angular/material/slider";
 
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { NavbarDrawerComponent } from './navbar-drawer/navbar-drawer.component';
 
 
 @NgModule({
@@ -83,6 +85,7 @@ import { ShareIconsModule } from 'ngx-sharebuttons/icons';
     CreateDummyComponent,
     DummyDeviceComponent,
     CreateWeathercardComponent,
+    NavbarDrawerComponent,
 
   ],
   imports: [
@@ -116,6 +119,7 @@ import { ShareIconsModule } from 'ngx-sharebuttons/icons';
       debug: true
     }),
     ShareIconsModule,
+    MatSidenavModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

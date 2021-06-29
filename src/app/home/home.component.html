@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <main>
-
+  <app-navbar-drawer>
   <app-device-list></app-device-list>
 
   <br>
@@ -8,6 +8,7 @@
 
   <button mat-stroked-button [routerLink]="['/create-lamp']" color="primary">Create a new lamp</button>
   <button mat-stroked-button [routerLink]="['/create-dummy']" color="primary">Create other device</button>
-<button mat-stroked-button [routerLink]="['/create-weathercard']" color="primary">Create new Weathercard</button>
+  <button mat-stroked-button [routerLink]="['/create-weathercard']" color="primary">Create new Weathercard</button>
   <app-footer></app-footer>
+  </app-navbar-drawer>
 </main>
