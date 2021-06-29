@@ -42,7 +42,6 @@ import { HelpComponent } from './help/help.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { MatOptionModule } from '@angular/material/core';
-import { MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS } from '@angular-material-components/color-picker';
 import { CreateLampComponent } from './create-lamp/create-lamp.component';
 import { DeviceListComponent } from './device-list/device-list.component';
 
@@ -57,6 +56,9 @@ import {MatSlider, MatSliderModule} from "@angular/material/slider";
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import {FlexLayoutModule} from "@angular/flex-layout";
+import { ColoredLampDeviceComponent } from './devices/colored-lamp-device/colored-lamp-device.component';
+import { CreateColoredLampComponent } from './create-colored-lamp/create-colored-lamp.component';
+import {ColorPickerModule} from "ngx-color-picker";
 
 
 @NgModule({
@@ -84,6 +86,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     CreateDummyComponent,
     DummyDeviceComponent,
     CreateWeathercardComponent,
+    ColoredLampDeviceComponent,
+    CreateColoredLampComponent,
 
   ],
   imports: [
@@ -118,6 +122,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     }),
     ShareIconsModule,
     FlexLayoutModule,
+    ColorPickerModule,
+
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

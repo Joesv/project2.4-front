@@ -1,5 +1,11 @@
 <app-lamp-device *ngFor="let lamp of lamps" [lamp]="lamp">
 </app-lamp-device>
+
+<app-colored-lamp-device *ngFor="let coloredLamp of coloredLamps" [coloredLamp]="coloredLamp">
+</app-colored-lamp-device>
+
 <app-dummy-device *ngFor="let dummy of dummys" [dummy]="dummy">
 </app-dummy-device>
-<app-weather-card *ngFor="let weather of weathercards" [card]="weather"></app-weather-card>
+
+<app-weather-card *ngFor="let weather of weathercards" [card]="weather">
+</app-weather-card>

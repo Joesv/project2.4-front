@@ -1,0 +1,9 @@
+<app-device [deviceTitle]="coloredLamp.name" (onDelete)="deleteColoredLamp()" deviceType="Colored Lamp">
+  {{ coloredLamp.description }}<br>
+  This lamp is currently {{ coloredLamp.last_red }}, {{ coloredLamp.last_green }}, {{ coloredLamp.last_blue }}.<br>
+  <br>
+  <input [(colorPicker)]="color" [style.background]="color">
+  <br>
+  <br>
+  <button mat-stroked-button (click)="changeColor()" color="primary">Update</button>
+</app-device>
