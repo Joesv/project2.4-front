@@ -13,7 +13,7 @@ import {
   WeathercardDataService,
   WeatherCardResponse,
   WeatherCards
-} from "../devices/weather-card/weathercard-data.service";
+} from '../devices/weather-card/weathercard-data.service';
 
 @Component({
   selector: 'app-device-list',

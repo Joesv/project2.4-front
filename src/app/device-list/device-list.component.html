@@ -1,5 +1,8 @@
-<app-lamp-device *ngFor="let lamp of lamps" [lamp]="lamp">
-</app-lamp-device>
-<app-dummy-device *ngFor="let dummy of dummys" [dummy]="dummy">
-</app-dummy-device>
-<app-weather-card *ngFor="let weather of weathercards" [card]="weather"></app-weather-card>
+
+<div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="0.5%" fxLayoutAlign="left" >
+  <app-lamp-device *ngFor="let lamp of lamps" [lamp]="lamp" >
+  </app-lamp-device>
+  <app-dummy-device *ngFor="let dummy of dummys" [dummy]="dummy" >
+  </app-dummy-device>
+  <app-weather-card *ngFor="let weather of weathercards" [card]="weather"></app-weather-card>
+</div>
