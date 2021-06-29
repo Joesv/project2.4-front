@@ -1,8 +1,14 @@
+<app-navbar></app-navbar>
+
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Register</mat-card-title>
+    <mat-card-title>
+      Register
+    </mat-card-title>
   </mat-card-header>
+
   <mat-divider></mat-divider>
+
   <mat-card-content>
     <form [formGroup]="form">
       <p>
@@ -33,8 +39,6 @@
           <input type="password" matInput placeholder="password (again)" formControlName="password2">
         </mat-form-field>
       </p>
-
-
     </form>
   </mat-card-content>
   <mat-card-actions>
