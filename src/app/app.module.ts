@@ -56,6 +56,7 @@ import {MatSlider, MatSliderModule} from "@angular/material/slider";
 
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 
 @NgModule({
@@ -116,6 +117,7 @@ import { ShareIconsModule } from 'ngx-sharebuttons/icons';
       debug: true
     }),
     ShareIconsModule,
+    FlexLayoutModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

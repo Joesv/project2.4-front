@@ -1,8 +1,21 @@
 <mat-toolbar color = "primary">
 
   <h1>Geewgle Heum</h1>
-  <div class="outlineRight">
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+
+  <div class="outlineRight" >
+    <ul class="nav-links" fxHide fxShow.gt-md>
+      <li>
+        <a href="/home">Home</a>
+      </li>
+      <li>
+        <a href="about">About</a>
+      </li>
+      <li>
+        <a href="help">Help</a>
+      </li>
+    </ul>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxHide fxShow.lt-lg>
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
@@ -27,4 +40,5 @@
       <app-login-link-button></app-login-link-button>
     </ng-container>
   </div>
+
 </mat-toolbar>
