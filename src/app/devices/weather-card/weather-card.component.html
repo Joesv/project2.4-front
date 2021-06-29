@@ -1,4 +1,4 @@
-<app-device *ngIf="currentWeather!==undefined" deviceTitle="{{title}}">
+<app-device *ngIf="currentWeather!==undefined" deviceTitle="{{title}}" (onDelete)="deleteCard()">
   <mat-card-content>
     <div class="flex-row">
     <div class="temp">
