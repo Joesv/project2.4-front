@@ -1,13 +1,10 @@
 <app-navbar></app-navbar>
 <main>
-
   <app-device-list></app-device-list>
-
   <br>
-  <app-notification-test></app-notification-test>
-
   <button mat-stroked-button [routerLink]="['/create-lamp']" color="primary">Create a new lamp</button>
+  <button mat-stroked-button [routerLink]="['/create-colored-lamp']" color="primary">Create a new colored lamp</button>
   <button mat-stroked-button [routerLink]="['/create-dummy']" color="primary">Create other device</button>
-<button mat-stroked-button [routerLink]="['/create-weathercard']" color="primary">Create new Weathercard</button>
+  <button mat-stroked-button [routerLink]="['/create-weathercard']" color="primary">Create new Weathercard</button>
   <app-footer></app-footer>
 </main>
