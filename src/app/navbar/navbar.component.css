@@ -1,17 +1,9 @@
-
 *{
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
 
-nav{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 8vh;
-  background-color: darkturquoise;
-}
 .logo{
   color: ghostwhite;
   text-transform: uppercase;
@@ -35,7 +27,7 @@ nav{
   padding: 10px;
 }
 mat-toolbar {
-  width: 100vw;
+  width: 100%;
 }
 
 .outlineRight{

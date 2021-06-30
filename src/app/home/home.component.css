@@ -10,6 +10,6 @@
 
 main {
   background: linear-gradient(to right top, lightgrey, white);
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 }
