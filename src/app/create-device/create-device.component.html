@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Create device
+    </mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+
+  <br>
+
+  <mat-card-content>
+    <mat-form-field appearance="fill" floatLabel="always" class="full-width-form-field">
+      <mat-label>Device type</mat-label>
+      <mat-select #type value="lamp">
+        <mat-option value="lamp">Lamp</mat-option>
+        <mat-option value="colored_lamp">Colored lamp</mat-option>
+        <mat-option value="weather_card">Weather card</mat-option>
+        <mat-option value="dummy">Other (dummy)</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <app-create-lamp *ngIf="type.value == 'lamp'"></app-create-lamp>
+    <app-create-colored-lamp *ngIf="type.value == 'colored_lamp'"></app-create-colored-lamp>
+    <app-create-weathercard *ngIf="type.value == 'weather_card'"></app-create-weathercard>
+    <app-create-dummy *ngIf="type.value == 'dummy'"></app-create-dummy>
+
+  </mat-card-content>
+</mat-card>

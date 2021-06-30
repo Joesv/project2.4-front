@@ -1,31 +1,19 @@
-<mat-card>
-  <form class="create-colored-lamp-form" [formGroup]="form">
-    <mat-card-header>
-      <mat-card-title>Add device</mat-card-title>
-    </mat-card-header>
-    <mat-divider></mat-divider>
-    <mat-card-content>
-      <br>
+<form class="create-colored-lamp-form" [formGroup]="form">
+  <mat-form-field appearance="fill" floatLabel="always" class="full-width-form-field">
+    <mat-label>Device name</mat-label>
+    <input matInput placeholder="Ex. Living room light" value="" formControlName="name">
+  </mat-form-field>
 
-      <mat-form-field appearance="fill" floatLabel="always" class="full-width-form-field">
-        <mat-label>Device name</mat-label>
-        <input matInput placeholder="Ex. Living room light" value="" formControlName="name">
-      </mat-form-field>
+  <mat-form-field appearance="fill" floatLabel="always" class="full-width-form-field">
+    <mat-label>Device description</mat-label>
+    <textarea matInput placeholder="Ex. The light in the center of..." formControlName="description"></textarea>
+  </mat-form-field>
 
-      <mat-form-field appearance="fill" floatLabel="always" class="full-width-form-field">
-        <mat-label>Device description</mat-label>
-        <textarea matInput placeholder="Ex. The light in the center of..." formControlName="description"></textarea>
-      </mat-form-field>
+  <mat-form-field appearance="fill" floatLabel="always" class="full-width-form-field">
+    <mat-label>Update url</mat-label>
+    <input matInput placeholder="http://1.1.1.1/update?red={red}&green={green}&blue={blue}" formControlName="update_url">
+  </mat-form-field>
 
-      <mat-form-field appearance="fill" floatLabel="always" class="full-width-form-field">
-        <mat-label>Update url</mat-label>
-        <input matInput placeholder="http://1.1.1.1/update?red={red}&green={green}&blue={blue}" formControlName="update_url">
-      </mat-form-field>
-
-    </mat-card-content>
-    <mat-card-actions>
-      <button type="submit" mat-raised-button color="primary" (click)="create()">Create device</button>
-      <button mat-raised-button color="accent" (click)="cancel()">Cancel</button>
-    </mat-card-actions>
-  </form>
-</mat-card>
+  <button type="submit" mat-raised-button color="primary" (click)="create()">Create device</button>
+  <button mat-raised-button color="accent" (click)="cancel()">Cancel</button>
+</form>
