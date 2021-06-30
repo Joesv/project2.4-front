@@ -4,7 +4,7 @@
     <mat-card-title class="card-container-left">{{ deviceTitle }}</mat-card-title>
 
     <mat-card-title class="card-container-right">
-      <button mat-icon-button [matMenuTriggerFor]="menu">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
