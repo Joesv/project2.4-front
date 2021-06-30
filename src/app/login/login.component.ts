@@ -45,7 +45,8 @@ export class LoginComponent implements OnInit {
           }
 
         }, error=>{
-          if(error.error.error === "user does not exist"){
+          let message = ""
+          if(error.error.error === "email or password is incorrect"){
             message = 'Email and/or password is incorrect';
           } else {
             message = 'Something went wrong'
