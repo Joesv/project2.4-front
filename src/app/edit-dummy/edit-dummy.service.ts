@@ -15,10 +15,10 @@ export class EditDummyService {
 }
 
 export interface DummyDevicesResponse {
-  dummys: Array<DummyDeviceResponse>;
+  dummys: Array<EditDummyResponse>;
 }
 
-export interface DummyDeviceResponse {
+export interface EditDummyResponse {
   id: number;
   dummy_type: string;
   user_id: number;

@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {EditDummyResponse} from "./edit-dummy.service";
+
 
 @Component({
   selector: 'app-edit-dummy',
@@ -8,7 +10,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class EditDummyComponent implements OnInit {
 
-
+  @Input() dummy: EditDummyResponse;
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
