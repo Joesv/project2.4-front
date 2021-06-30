@@ -7,3 +7,11 @@
 .full-width-form-field {
   width: 100%;
 }
+
+.help-text {
+  color: #8a8a8a;
+}
+
+button {
+  margin-right: 1em;
+}

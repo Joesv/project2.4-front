@@ -9,11 +9,17 @@
     <textarea matInput placeholder="Ex. The light in the center of..." formControlName="description"></textarea>
   </mat-form-field>
 
+  <span class="help-text">
+    This URL will be requested using GET when the lamp is to be turned on, and will only succeed if it returns code 200.
+  </span>
   <mat-form-field appearance="fill" floatLabel="always" class="full-width-form-field">
     <mat-label>ON url</mat-label>
     <input matInput placeholder="http://1.1.1.1/on" formControlName="on_url">
   </mat-form-field>
 
+  <span class="help-text">
+    This URL will be requested using GET when the lamp is to be turned off, and will only succeed if it returns code 200.
+  </span>
   <mat-form-field appearance="fill" floatLabel="always" class="full-width-form-field">
     <mat-label>OFF url</mat-label>
     <input matInput placeholder="http://1.1.1.1/off" formControlName="off_url">
