@@ -58,6 +58,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import { ColoredLampDeviceComponent } from './devices/colored-lamp-device/colored-lamp-device.component';
 import { CreateColoredLampComponent } from './create-colored-lamp/create-colored-lamp.component';
 import {ColorPickerModule} from "ngx-color-picker";
+import { EditDummyComponent } from './edit-dummy/edit-dummy.component';
 import { CreateDeviceComponent } from './create-device/create-device.component';
 
 
@@ -88,6 +89,7 @@ import { CreateDeviceComponent } from './create-device/create-device.component';
     ColoredLampDeviceComponent,
     CreateColoredLampComponent,
     CreateDeviceComponent,
+    EditDummyComponent,
 
   ],
   imports: [
