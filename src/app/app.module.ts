@@ -35,7 +35,6 @@ import { NotificationTESTComponent } from './notification-test/notification-test
 
 import { LogoutComponent } from './logout/logout.component';
 import { AboutComponent } from './about/about.component';
-import { AddDeviceComponent } from './add-device/add-device.component';
 import { MatSelectModule } from '@angular/material/select';
 import { LoginLinkButtonComponent } from './login-link-button/login-link-button.component';
 import { HelpComponent } from './help/help.component';
@@ -59,6 +58,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import { ColoredLampDeviceComponent } from './devices/colored-lamp-device/colored-lamp-device.component';
 import { CreateColoredLampComponent } from './create-colored-lamp/create-colored-lamp.component';
 import {ColorPickerModule} from "ngx-color-picker";
+import { CreateDeviceComponent } from './create-device/create-device.component';
 
 
 @NgModule({
@@ -74,7 +74,6 @@ import {ColorPickerModule} from "ngx-color-picker";
     LogoutComponent,
     AboutComponent,
     WeatherCardComponent,
-    AddDeviceComponent,
     LoginLinkButtonComponent,
     HelpComponent,
     FooterComponent,
@@ -88,6 +87,7 @@ import {ColorPickerModule} from "ngx-color-picker";
     CreateWeathercardComponent,
     ColoredLampDeviceComponent,
     CreateColoredLampComponent,
+    CreateDeviceComponent,
 
   ],
   imports: [

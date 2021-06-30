@@ -1,30 +1,22 @@
-<mat-card>
-  <form class="create-weathercard-form" [formGroup]="form">
-    <mat-card-header>
-      <mat-card-title>Add a weather card</mat-card-title>
-    </mat-card-header>
-    <mat-divider></mat-divider>
-    <mat-card-content>
-      <mat-form-field appearance="fill" floatLabel="always">
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Ex. Weather at home" value="" formControlName="name">
-      </mat-form-field>
+<form class="create-weathercard-form" [formGroup]="form">
+  <mat-form-field appearance="fill" floatLabel="always">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Ex. Weather at home" value="" formControlName="name">
+  </mat-form-field>
 
-      <mat-form-field appearance="fill" floatLabel="always">
-        <mat-label>Latitude</mat-label>
-        <input matInput placeholder="Ex. 50.1324115" value="" formControlName="lat">
-      </mat-form-field>
+  <mat-form-field appearance="fill" floatLabel="always">
+    <mat-label>Latitude</mat-label>
+    <input matInput placeholder="Ex. 50.1324115" value="" formControlName="lat">
+  </mat-form-field>
 
-      <mat-form-field appearance="fill" floatLabel="always">
-        <mat-label>Longitude</mat-label>
-        <input matInput placeholder="Ex. 4.1236573" value="" formControlName="lon">
-      </mat-form-field>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="accent" (click)="setLocation()">Automatically set location</button>
+  <mat-form-field appearance="fill" floatLabel="always">
+    <mat-label>Longitude</mat-label>
+    <input matInput placeholder="Ex. 4.1236573" value="" formControlName="lon">
+  </mat-form-field>
 
-      <button type="submit" mat-raised-button color="primary" (click)="create()">Create card</button>
-      <button mat-raised-button color="accent" (click)="cancel()">Cancel</button>
-    </mat-card-actions>
-  </form>
-</mat-card>
+  <button mat-raised-button color="accent" (click)="setLocation()">Automatically set location</button>
+
+  <button type="submit" mat-raised-button color="primary" (click)="create()">Create card</button>
+  <button mat-raised-button color="accent" (click)="cancel()">Cancel</button>
+</form>
+
