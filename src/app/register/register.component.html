@@ -41,8 +41,10 @@
       </p>
     </form>
   </mat-card-content>
+
   <mat-card-actions>
-    <button mat-flat-button color="primary" (click)="register()">Register!</button>
-    <p>Already have an account? <button [routerLink]="['/login']" mat-button>Login!</button></p>
+    <button mat-raised-button color="primary" (click)="register()">Register!</button>
+    <br><br>
+    <p>Already have an account? <a [routerLink]="['/login']">Login!</a></p>
   </mat-card-actions>
 </mat-card>
