@@ -10,7 +10,9 @@ import {HttpClient} from "@angular/common/http";
 export class DummyDeviceComponent implements OnInit {
 
   @Input() dummy: DummyDeviceResponse;
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) {
+  }
 
   ngOnInit(): void {
   }

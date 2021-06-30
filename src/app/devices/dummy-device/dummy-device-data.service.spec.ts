@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { DummyDeviceDataService } from './dummy-device-data.service';
+import {DummyDeviceDataService} from './dummy-device-data.service';
 
 describe('DummyDeviceDataService', () => {
   let service: DummyDeviceDataService;

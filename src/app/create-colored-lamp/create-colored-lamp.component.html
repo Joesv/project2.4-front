@@ -1,23 +1,24 @@
-<form class="create-colored-lamp-form" [formGroup]="form">
-  <mat-form-field appearance="fill" floatLabel="always" class="full-width-form-field">
+<form [formGroup]="form" class="create-colored-lamp-form">
+  <mat-form-field appearance="fill" class="full-width-form-field" floatLabel="always">
     <mat-label>Device name</mat-label>
-    <input matInput placeholder="Ex. Living room light" value="" formControlName="name">
+    <input formControlName="name" matInput placeholder="Ex. Living room light" value="">
   </mat-form-field>
 
-  <mat-form-field appearance="fill" floatLabel="always" class="full-width-form-field">
+  <mat-form-field appearance="fill" class="full-width-form-field" floatLabel="always">
     <mat-label>Device description</mat-label>
-    <textarea matInput placeholder="Ex. The light in the center of..." formControlName="description"></textarea>
+    <textarea formControlName="description" matInput placeholder="Ex. The light in the center of..."></textarea>
   </mat-form-field>
 
   <span class="help-text">
     This URL will be requested using GET when the lamp is updated, and will only succeed if it returns code 200.<br>
     The following placeholders will be replaced by their corresponding values between 0.0 and 1.0: &#123;red&#125;, &#123;green&#125; and &#123;blue&#125;
   </span>
-  <mat-form-field appearance="fill" floatLabel="always" class="full-width-form-field">
+  <mat-form-field appearance="fill" class="full-width-form-field" floatLabel="always">
     <mat-label>Update url</mat-label>
-    <input matInput placeholder="http://1.1.1.1/update?red={red}&green={green}&blue={blue}" formControlName="update_url">
+    <input formControlName="update_url" matInput
+           placeholder="http://1.1.1.1/update?red={red}&green={green}&blue={blue}">
   </mat-form-field>
 
-  <button type="submit" mat-raised-button color="primary" (click)="create()">Create device</button>
-  <button mat-raised-button color="accent" (click)="cancel()">Cancel</button>
+  <button (click)="create()" color="primary" mat-raised-button type="submit">Create device</button>
+  <button (click)="cancel()" color="accent" mat-raised-button>Cancel</button>
 </form>

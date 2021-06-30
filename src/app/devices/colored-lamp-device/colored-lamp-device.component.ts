@@ -2,7 +2,6 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ColoredLampDeviceResponse} from "./colored-lamp-device-data.service";
 import {HttpClient} from "@angular/common/http";
 import {NgxMatColorPickerComponent} from "@angular-material-components/color-picker";
-import {ColorPickerComponent} from "ngx-color-picker";
 
 @Component({
   selector: 'app-colored-lamp-device',
@@ -15,7 +14,8 @@ export class ColoredLampDeviceComponent implements OnInit {
   picker: NgxMatColorPickerComponent;
   color: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   ngOnInit(): void {
     this.color = `rgb(${this.coloredLamp.last_red}, ${this.coloredLamp.last_green}, ${this.coloredLamp.last_blue})`;

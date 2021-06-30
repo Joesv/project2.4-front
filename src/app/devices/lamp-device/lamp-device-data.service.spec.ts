@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { LampDeviceDataService } from './lamp-device-data.service';
+import {LampDeviceDataService} from './lamp-device-data.service';
 
 describe('LampDeviceDataService', () => {
   let service: LampDeviceDataService;

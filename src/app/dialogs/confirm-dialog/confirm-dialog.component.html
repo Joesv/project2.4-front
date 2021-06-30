@@ -4,6 +4,6 @@
   </p>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-raised-button color="primary" (click)="onConfirmClick()" tabindex="1">{{confirmButtonText}}</button>
-  <button mat-raised-button mat-dialog-close tabindex="-1">{{cancelButtonText}}</button>
+  <button (click)="onConfirmClick()" color="primary" mat-raised-button tabindex="1">{{confirmButtonText}}</button>
+  <button mat-dialog-close mat-raised-button tabindex="-1">{{cancelButtonText}}</button>
 </mat-dialog-actions>

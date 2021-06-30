@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { LoginLinkButtonComponent } from './login-link-button.component';
+import {LoginLinkButtonComponent} from './login-link-button.component';
 
 describe('LoginLinkButtonComponent', () => {
   let component: LoginLinkButtonComponent;
@@ -8,9 +8,9 @@ describe('LoginLinkButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginLinkButtonComponent ]
+      declarations: [LoginLinkButtonComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
@@ -7,9 +7,10 @@ import {Observable} from 'rxjs';
 })
 export class LampDeviceDataService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
-  getLampDevices(): Observable<LampDevicesResponse>{
+  getLampDevices(): Observable<LampDevicesResponse> {
     return this.httpClient.get<LampDevicesResponse>('/api/lamp_device/');
   }
 }

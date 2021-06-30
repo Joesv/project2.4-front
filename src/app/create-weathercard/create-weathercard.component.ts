@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Location} from "@angular/common";
 import {HttpClient} from "@angular/common/http";
@@ -17,7 +17,7 @@ export class CreateWeathercardComponent implements OnInit {
     this.form = this.fb.group({
       name: ['', [Validators.required]],
       lat: ['', [Validators.required]],
-      lon: ['',[Validators.required]]
+      lon: ['', [Validators.required]]
     })
   }
 
@@ -25,10 +25,9 @@ export class CreateWeathercardComponent implements OnInit {
   }
 
 
-
   setLocation(): void {
-    if(navigator.geolocation){
-      navigator.geolocation.getCurrentPosition((loc)=>{
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((loc) => {
         const lat = loc.coords.latitude;
         const lon = loc.coords.longitude;
 
@@ -45,20 +44,20 @@ export class CreateWeathercardComponent implements OnInit {
   }
 
 
-  create(): void{
-    if(!this.form.valid){
+  create(): void {
+    if (!this.form.valid) {
       return;
     }
 
     const headers = {'content-type': 'application/json'};
     const body = JSON.stringify(this.form.value);
-    this.http.post('/api/device/weathercard', body, {headers, observe:'response'})
-      .subscribe(resp =>{
-        if (resp.status === 201){
-          const snackBarRef = this.snackBar.open(`Created Weather Card ${this.form.value.name}.`, 'OK',{
+    this.http.post('/api/device/weathercard', body, {headers, observe: 'response'})
+      .subscribe(resp => {
+        if (resp.status === 201) {
+          const snackBarRef = this.snackBar.open(`Created Weather Card ${this.form.value.name}.`, 'OK', {
             duration: 1500
           });
-          snackBarRef.afterDismissed().subscribe(()=>{
+          snackBarRef.afterDismissed().subscribe(() => {
             this.router.navigate(['home']);
           })
         }
@@ -66,12 +65,13 @@ export class CreateWeathercardComponent implements OnInit {
 
   }
 
-  cancel(): void{
+  cancel(): void {
     this.location.back();
   }
 
 }
-export interface location{
+
+export interface location {
   lat: number;
   lon: number;
 }

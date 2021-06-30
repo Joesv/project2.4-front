@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ColoredLampDeviceComponent } from './colored-lamp-device.component';
+import {ColoredLampDeviceComponent} from './colored-lamp-device.component';
 
 describe('ColoredLampDeviceComponent', () => {
   let component: ColoredLampDeviceComponent;
@@ -8,9 +8,9 @@ describe('ColoredLampDeviceComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ColoredLampDeviceComponent ]
+      declarations: [ColoredLampDeviceComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

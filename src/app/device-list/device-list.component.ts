@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {
   LampDeviceDataService,
   LampDeviceResponse,
@@ -16,7 +16,8 @@ import {
 } from '../devices/weather-card/weathercard-data.service';
 import {
   ColoredLampDeviceDataService,
-  ColoredLampDeviceResponse, ColoredLampDevicesResponse
+  ColoredLampDeviceResponse,
+  ColoredLampDevicesResponse
 } from '../devices/colored-lamp-device/colored-lamp-device-data.service';
 
 @Component({
@@ -31,7 +32,8 @@ export class DeviceListComponent implements OnInit {
   weathercards: Array<WeatherCardResponse> = [];
 
   constructor(private lampDeviceDataService: LampDeviceDataService, private coloredLampDeviceDataService: ColoredLampDeviceDataService,
-              private dummyDeviceDataService: DummyDeviceDataService, private weatherCardDataService: WeathercardDataService) { }
+              private dummyDeviceDataService: DummyDeviceDataService, private weatherCardDataService: WeathercardDataService) {
+  }
 
   ngOnInit(): void {
     this.lampDeviceDataService.getLampDevices().subscribe((res: LampDevicesResponse) => {

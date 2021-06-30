@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
-import { Router } from "@angular/router";
+import {Router} from "@angular/router";
 import {loginSucces} from "../login/login.component";
 
 @Component({
@@ -13,7 +13,7 @@ export class RegisterComponent implements OnInit {
   form: FormGroup;
   email = new FormControl('', [Validators.required, Validators.email]);
 
-  constructor(private fb:FormBuilder, private http:HttpClient, private router: Router) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
     this.form = this.fb.group({
       username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -26,19 +26,19 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  register(){
+  register() {
     const values = this.form.value;
     console.log(values)
-    if(values.username && values.email && values.password && values.password2 && values.name && (values.password ===values.password2)){
+    if (values.username && values.email && values.password && values.password2 && values.name && (values.password === values.password2)) {
       const headers = {'content-type': 'application/json'}
       const payload = {email: values.email, password: values.password, username: values.username}
       const body = JSON.stringify(payload)
-      this.http.post("/api/user/register", body, {'headers':headers, observe: 'response'})
+      this.http.post("/api/user/register", body, {'headers': headers, observe: 'response'})
         .subscribe(resp => {
 
           switch (resp.status) {
             case 201:
-              const token : loginSucces = JSON.parse(JSON.stringify(resp.body))
+              const token: loginSucces = JSON.parse(JSON.stringify(resp.body))
               localStorage.setItem('jwttoken', token.access_token)
               const redirectTo = resp.headers.get("location")
               this.router.navigate([redirectTo])
@@ -51,9 +51,11 @@ export class RegisterComponent implements OnInit {
         })
     }
   }
+
   getErrorMessage() {
     if (this.email.hasError('required')) {
-      return 'You must enter a value';    }
+      return 'You must enter a value';
+    }
 
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }

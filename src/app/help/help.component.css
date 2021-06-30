@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
@@ -9,9 +9,11 @@ mat-card {
   margin: 5% auto auto;
   text-align: center;
 }
+
 mat-card-header {
   background-color: rebeccapurple;
 }
+
 mat-card-title {
   padding: 1em;
   background-color: rebeccapurple;
@@ -25,7 +27,8 @@ mat-form-field {
 mat-card-content {
   margin: 3em;
 }
+
 * {
-  overflow:hidden;
+  overflow: hidden;
 }
 

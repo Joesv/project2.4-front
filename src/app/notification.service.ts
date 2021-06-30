@@ -1,19 +1,20 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NotificationService {
 
-  constructor() { }
+  constructor() {
+  }
 
   sendNotification(title: string, options: object = {}) {
-    if('Notification' in window){
+    if ('Notification' in window) {
       Notification.requestPermission((result => {
-        if(result === "granted"){
+        if (result === "granted") {
           navigator.serviceWorker.ready.then(reg => {
             reg.showNotification(title, options)
-              .then(()=>{
+              .then(() => {
                 reg.update();
               })
           })

@@ -1,11 +1,11 @@
-<mat-toolbar color = "primary">
+<mat-toolbar color="primary">
 
   <h1>Geewgle Heum</h1>
 
-  <div class="outlineRight" >
+  <div class="outlineRight">
     <ul class="nav-links" fxHide fxShow.gt-md>
       <li>
-        <a href="/home" *ngIf="keyExists">Home</a>
+        <a *ngIf="keyExists" href="/home">Home</a>
       </li>
       <li>
         <a href="about">About</a>
@@ -15,19 +15,19 @@
       </li>
     </ul>
 
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxHide fxShow.lt-lg>
+    <button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" fxHide fxShow.lt-lg mat-icon-button>
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button *ngIf="keyExists" mat-menu-item [routerLink]="['/home']">
+      <button *ngIf="keyExists" [routerLink]="['/home']" mat-menu-item>
         <mat-icon>home</mat-icon>
         <span>Home</span>
       </button>
-      <button mat-menu-item [routerLink]="['/about']">
+      <button [routerLink]="['/about']" mat-menu-item>
         <mat-icon>info</mat-icon>
         <span>About</span>
       </button>
-      <button mat-menu-item [routerLink]="['/help']">
+      <button [routerLink]="['/help']" mat-menu-item>
         <mat-icon>help_outline</mat-icon>
         <span>Help</span>
       </button>

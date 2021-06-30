@@ -1,18 +1,19 @@
 <mat-card *ngIf="!deleted" [@fadeInOut]>
   <mat-card-header>
-    <div mat-card-avatar *ngIf="avatar !== undefined" [style.background-image]="'url('+avatar + ')'" class="avatar"></div>
+    <div *ngIf="avatar !== undefined" [style.background-image]="'url('+avatar + ')'" class="avatar"
+         mat-card-avatar></div>
     <mat-card-title class="card-container-left">{{ deviceTitle }}</mat-card-title>
 
     <mat-card-title class="card-container-right">
-      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+      <button [matMenuTriggerFor]="menu" aria-label="Menu" mat-icon-button>
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="edit()">
+        <button (click)="edit()" mat-menu-item>
           <mat-icon>edit</mat-icon>
           <span>Edit</span>
         </button>
-        <button mat-menu-item (click)="delete()">
+        <button (click)="delete()" mat-menu-item>
           <mat-icon>delete_outline</mat-icon>
           <span>Delete</span>
         </button>

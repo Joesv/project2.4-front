@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       const body = JSON.stringify(payload);
       this.http.post('/api/user/login', body, {headers: headers, observe: 'response'})
         .subscribe(resp => {
-          if (resp.status === 201){
+          if (resp.status === 201) {
             const token: loginSucces = JSON.parse(JSON.stringify(resp.body));
             localStorage.setItem('jwttoken', token.access_token);
             const redirectTo = resp.headers.get('location');
@@ -44,7 +44,8 @@ export class LoginComponent implements OnInit {
 
   getErrorMessage() {
     if (this.email.hasError('required')) {
-      return 'You must enter a value';    }
+      return 'You must enter a value';
+    }
 
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }

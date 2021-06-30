@@ -11,7 +11,9 @@ import {EditDummyResponse} from "./edit-dummy.service";
 export class EditDummyComponent implements OnInit {
 
   @Input() dummy: EditDummyResponse;
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) {
+  }
 
   ngOnInit(): void {
   }

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CreateLampComponent } from './create-lamp.component';
+import {CreateLampComponent} from './create-lamp.component';
 
 describe('CreateLampComponent', () => {
   let component: CreateLampComponent;
@@ -8,9 +8,9 @@ describe('CreateLampComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreateLampComponent ]
+      declarations: [CreateLampComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

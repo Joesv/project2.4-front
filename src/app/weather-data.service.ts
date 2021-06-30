@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
@@ -7,20 +7,23 @@ import {Observable} from "rxjs";
 })
 export class WeatherDataService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
-  getWeatherData(id: number): Observable<WeatherResponse>{
+  getWeatherData(id: number): Observable<WeatherResponse> {
     return this.httpClient.get<WeatherResponse>(`/api/device/weather/${id}`);
   }
 
 
 }
+
 export interface weather {
   id: number;
   main: string;
   description: string;
   icon: string;
 }
+
 export interface rain {
 
 }

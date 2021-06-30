@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {WeatherDataService, WeatherResponse} from '../../weather-data.service';
 import {WeatherCardResponse} from "./weathercard-data.service";
 import {HttpClient} from "@angular/common/http";
@@ -10,13 +10,14 @@ import {HttpClient} from "@angular/common/http";
 })
 export class WeatherCardComponent implements OnInit {
   @Input() card: WeatherCardResponse
-
-  constructor(private weatherService: WeatherDataService, private http: HttpClient) { }
   currentWeather: WeatherResponse;
   currentTemp: string;
   feelsLikeTemp: number;
   title: string = "Current weather"
   iconUrl: string;
+
+  constructor(private weatherService: WeatherDataService, private http: HttpClient) {
+  }
 
   ngOnInit(): void {
     this.title = `Current weather in ${this.card.locationname}`;
@@ -28,11 +29,11 @@ export class WeatherCardComponent implements OnInit {
     });
   }
 
-  deleteCard(): void{
+  deleteCard(): void {
     const headers = {'Content-type': 'application/json'};
     console.log("deleting")
-    this.http.delete(`/api/device/weathercard/${this.card.id}`, {headers, observe:"response"})
-      .subscribe(resp=>{
+    this.http.delete(`/api/device/weathercard/${this.card.id}`, {headers, observe: "response"})
+      .subscribe(resp => {
 
       })
   }

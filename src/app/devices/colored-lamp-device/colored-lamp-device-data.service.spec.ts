@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { ColoredLampDeviceDataService } from './colored-lamp-device-data.service';
+import {ColoredLampDeviceDataService} from './colored-lamp-device-data.service';
 
 describe('ColoredLampDeviceDataService', () => {
   let service: ColoredLampDeviceDataService;

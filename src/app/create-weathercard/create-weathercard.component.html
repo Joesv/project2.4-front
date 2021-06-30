@@ -1,22 +1,22 @@
-<form class="create-weathercard-form" [formGroup]="form">
+<form [formGroup]="form" class="create-weathercard-form">
   <mat-form-field appearance="fill" floatLabel="always">
     <mat-label>Name</mat-label>
-    <input matInput placeholder="Ex. Weather at home" value="" formControlName="name">
+    <input formControlName="name" matInput placeholder="Ex. Weather at home" value="">
   </mat-form-field>
 
   <mat-form-field appearance="fill" floatLabel="always">
     <mat-label>Latitude</mat-label>
-    <input matInput placeholder="Ex. 50.1324115" value="" formControlName="lat">
+    <input formControlName="lat" matInput placeholder="Ex. 50.1324115" value="">
   </mat-form-field>
 
   <mat-form-field appearance="fill" floatLabel="always">
     <mat-label>Longitude</mat-label>
-    <input matInput placeholder="Ex. 4.1236573" value="" formControlName="lon">
+    <input formControlName="lon" matInput placeholder="Ex. 4.1236573" value="">
   </mat-form-field>
 
-  <button mat-raised-button color="accent" (click)="setLocation()">Automatically set location</button>
+  <button (click)="setLocation()" color="accent" mat-raised-button>Automatically set location</button>
 
-  <button type="submit" mat-raised-button color="primary" (click)="create()">Create card</button>
-  <button mat-raised-button color="accent" (click)="cancel()">Cancel</button>
+  <button (click)="create()" color="primary" mat-raised-button type="submit">Create card</button>
+  <button (click)="cancel()" color="accent" mat-raised-button>Cancel</button>
 </form>
 

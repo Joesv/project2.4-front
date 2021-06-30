@@ -1,9 +1,7 @@
-import { Injectable } from '@angular/core';
-import {
-  HttpEvent, HttpInterceptor, HttpHandler, HttpRequest
-} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
 
-import { Observable } from 'rxjs';
+import {Observable} from 'rxjs';
 
 /** Check if token exists
  * if not, add token
@@ -33,8 +31,7 @@ export class JwtInterceptor implements HttpInterceptor {
           'Bearer ' + idToken)
       });
       return next.handle(cloned);
-    }
-    else {
+    } else {
       console.log('JWT does not exist yet');
       return next.handle(req);
     }
