@@ -12,6 +12,11 @@ import {AuthGuard} from './auth/auth.guard';
 
 import {HelpComponent} from './help/help.component';
 import {CreateDeviceComponent} from './create-device/create-device.component';
+import {CreateLampComponent} from './create-lamp/create-lamp.component';
+import {CreateDummyComponent} from './create-dummy/create-dummy.component';
+import {CreateWeathercardComponent} from "./create-weathercard/create-weathercard.component";
+import {CreateColoredLampComponent} from "./create-colored-lamp/create-colored-lamp.component";
+import {EditDummyComponent} from "./edit-dummy/edit-dummy.component";
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
@@ -21,6 +26,11 @@ const routes: Routes = [
 
   {path: 'help', component: HelpComponent},
 
+  {path: 'create-lamp', component: CreateLampComponent, canActivate: [AuthGuard]},
+  {path: 'create-colored-lamp', component: CreateColoredLampComponent, canActivate: [AuthGuard]},
+  {path: 'create-dummy', component: CreateDummyComponent, canActivate: [AuthGuard]},
+  {path: 'edit-dummy', component: EditDummyComponent, canActivate: [AuthGuard]},
+  {path: 'create-weathercard', component: CreateWeathercardComponent, canActivate: [AuthGuard]},
   {path: 'create-device', component: CreateDeviceComponent, canActivate: [AuthGuard]},
 
   {path: '', redirectTo: '/login', pathMatch: 'full'},

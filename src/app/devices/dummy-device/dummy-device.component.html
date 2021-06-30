@@ -1,4 +1,4 @@
-<app-device [deviceTitle]="dummy.name" [deviceType]="dummy.dummy_type" fxFlexAlign="stretch">
+<app-device [deviceTitle]="dummy.name" (onDelete)="deleteDummy()" [deviceType]="dummy.dummy_type" fxFlexAlign="stretch">
   {{ dummy.description }}
   <br>
   <div *ngIf="dummy.dummy_type == 'Coffee machine'">
