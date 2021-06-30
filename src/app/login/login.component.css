@@ -9,16 +9,17 @@ mat-card {
   margin: 15% auto auto;
   text-align: center;
 }
+mat-card-header {
+  background-color: rebeccapurple;
+}
+
 mat-card-title {
-  color: whitesmoke;
   padding: 1em;
+  background-color: rebeccapurple;
+  color: whitesmoke;
 }
 mat-form-field {
   padding-top: 0.3em;
-}
-mat-card-header {
-  background-color: rebeccapurple;
-  padding: 1em;
 }
 
 * {
