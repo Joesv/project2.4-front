@@ -1,4 +1,6 @@
-<mat-card >
+<app-navbar></app-navbar>
+
+<mat-card>
   <mat-card-header color="primary">
     <mat-card-title color="primary">
       Login
@@ -25,9 +27,6 @@
 
   <mat-card-actions>
     <button mat-raised-button class="button" color="primary" (click)="login()">Login!</button>
-    <button
-      [routerLink]="['/help']"
-      mat-raised-button class="button" color="primary">Help</button>
-    <p class="no-account">No account yet? <button [routerLink]="['/register']" mat-button>Register!</button></p>
+    <p class="no-account">No account yet? <a [routerLink]="['/register']">Register!</a></p>
   </mat-card-actions>
 </mat-card>
