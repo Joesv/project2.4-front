@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {loginSucces} from "../login/login.component";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,7 @@ export class RegisterComponent implements OnInit {
   form: FormGroup;
   email = new FormControl('', [Validators.required, Validators.email]);
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router, private snackBar: MatSnackBar) {
     this.form = this.fb.group({
       username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -48,6 +49,9 @@ export class RegisterComponent implements OnInit {
               break;
           }
 
+        }, error =>{
+          console.log(error)
+          this.snackBar.open(error.error.error,'OK', {duration: 1500})
         })
     }
   }
