@@ -15,9 +15,6 @@ import {CreateDeviceComponent} from './create-device/create-device.component';
 import {EditDummyComponent} from './edit-dummy/edit-dummy.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/login', pathMatch: 'full'},
-  {path: '**', component: PageNotFoundComponent},
-
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
 
@@ -28,6 +25,9 @@ const routes: Routes = [
 
   {path: 'edit-dummy', component: EditDummyComponent, canActivate: [AuthGuard]},
   {path: 'create-device', component: CreateDeviceComponent, canActivate: [AuthGuard]},
+
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path: '**', component: PageNotFoundComponent},
 ];
 
 @NgModule({
