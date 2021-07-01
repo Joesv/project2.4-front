@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
   password2 = new FormControl('', [Validators.required, Validators.minLength(8)]);
 
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router, private snackBar: MatSnackBar) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router, private snackBar: MatSnackBar) {}
   ngOnInit(): void {
 
     this.form = this.fb.group({
