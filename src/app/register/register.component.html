@@ -13,30 +13,34 @@
     <form [formGroup]="form">
       <p>
         <mat-form-field>
-          <input formControlName="username" matInput placeholder="username" type="text">
+          <input [formControl]="username" matInput placeholder="username" id="username" type="text">
+          <mat-error *ngIf="username.invalid">{{getErrorMessageUsername()}}</mat-error>
         </mat-form-field>
       </p>
       <p>
         <mat-form-field>
-          <input [formControl]="email" formControlName="email" matInput placeholder="email" required type="email">
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
-      </p>
-
-      <p>
-        <mat-form-field>
-          <input formControlName="name" matInput placeholder="name" type="text">
+          <input [formControl]="email" matInput placeholder="email" required type="email">
+          <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}}</mat-error>
         </mat-form-field>
       </p>
 
       <p>
         <mat-form-field>
-          <input formControlName="password" matInput placeholder="password" type="password">
+          <input [formControl]="name" matInput placeholder="name" type="text">
+          <mat-error *ngIf="name.invalid">{{getErrorMessageName()}}</mat-error>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input [formControl]="password" matInput placeholder="password" type="password">
+          <mat-error *ngIf="password.invalid">{{getErrorMessagePassword()}}</mat-error>
         </mat-form-field>
       </p>
       <p>
         <mat-form-field>
-          <input formControlName="password2" matInput placeholder="password (again)" type="password">
+          <input [formControl]="password2" matInput placeholder="repeat password" type="password">
+          <mat-error *ngIf="password2.invalid">{{getErrorMessagePassword2()}}</mat-error>
         </mat-form-field>
       </p>
     </form>
