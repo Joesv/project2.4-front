@@ -8,6 +8,9 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./dummy-device.component.css']
 })
 export class DummyDeviceComponent implements OnInit {
+  formatLabel(value: number) {
+    return value + '%';
+  }
 
   @Input() dummy: DummyDeviceResponse;
 
@@ -16,6 +19,8 @@ export class DummyDeviceComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
 
   changeStatus(value: number): void {
     this.dummy.value = value;

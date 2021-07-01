@@ -5,9 +5,12 @@
     <mat-slide-toggle (change)="changeStatus($event.checked)" [checked]="dummy.value == 1"></mat-slide-toggle>
   </div>
 
+  <div *ngIf="dummy.dummy_type == 'Sprinklers'">
+    <mat-slide-toggle (change)="changeStatus($event.checked)" [checked]="dummy.value == 1"></mat-slide-toggle>
+  </div>
+
   <div *ngIf="dummy.dummy_type == 'Roller shutter'">
-    <mat-slider (change)='changeStatus($event.value)' [value]="dummy.value" aria-label="units" max="100" min="0" step="1"
-                thumbLabel></mat-slider>
+    <mat-slider (change)='changeStatus($event.value)' [value]="dummy.value" [displayWith]="formatLabel" aria-label="units" max="100" min="0" step="1" thumbLabel></mat-slider>
   </div>
 
 </app-device>

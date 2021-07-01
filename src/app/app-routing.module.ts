@@ -22,8 +22,6 @@ const routes: Routes = [
   {path: 'help', component: HelpComponent},
 
   {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
-
-  {path: 'edit-dummy', component: EditDummyComponent, canActivate: [AuthGuard]},
   {path: 'create-device', component: CreateDeviceComponent, canActivate: [AuthGuard]},
 
   {path: '', redirectTo: '/login', pathMatch: 'full'},
