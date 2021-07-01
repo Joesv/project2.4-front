@@ -1,8 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {HttpClient} from '@angular/common/http';
-import {Router} from '@angular/router';
-import {loginSucces} from '../login/login.component';
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {HttpClient} from "@angular/common/http";
+import {Router} from "@angular/router";
+import {loginSucces} from "../login/login.component";
+import {MatSnackBar} from "@angular/material/snack-bar";
+
 
 @Component({
   selector: 'app-register',
@@ -17,10 +19,10 @@ export class RegisterComponent implements OnInit {
   password = new FormControl('', [Validators.required, Validators.minLength(8)]);
   password2 = new FormControl('', [Validators.required, Validators.minLength(8)]);
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
-  }
 
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router, private snackBar: MatSnackBar) {
   ngOnInit(): void {
+
     this.form = this.fb.group({
       username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -32,7 +34,6 @@ export class RegisterComponent implements OnInit {
 
   register() {
     const values = this.form.value;
-    console.log(values);
     if (values.username && values.email && values.password && values.password2 && values.name && (values.password === values.password2)) {
       const headers = {'content-type': 'application/json'};
       const payload = {email: values.email, password: values.password, username: values.username};
@@ -52,7 +53,10 @@ export class RegisterComponent implements OnInit {
               break;
           }
 
-        });
+        }, error =>{
+          this.snackBar.open(error.error.error,'OK', {duration: 1500})
+        })
+
     }
   }
 
