@@ -35,11 +35,11 @@ export class RegisterComponent implements OnInit {
 
   register() {
     const values = {
-      username: this.username.value,
-      email: this.email.value,
-      name: this.name.value,
-      password: this.password.value,
-      password2: this.password2.value,
+      username: this.username.valid && this.username.value,
+      email: this.email.valid && this.email.value,
+      name: this.name.valid && this.name.value,
+      password: this.password.valid && this.password.value,
+      password2: this.password2.valid && this.password2.value,
     };
 
     if (values.username && values.email && values.name && values.password && (values.password2 === values.password)) {
