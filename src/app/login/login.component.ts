@@ -33,14 +33,12 @@ export class LoginComponent implements OnInit {
       const body = JSON.stringify(payload);
       this.http.post('/api/user/login', body, {headers: headers, observe: 'response'})
         .subscribe(resp => {
-          console.log(resp)
           if (resp.status === 201) {
             const token: loginSucces = JSON.parse(JSON.stringify(resp.body));
             localStorage.setItem('jwttoken', token.access_token);
             const redirectTo = resp.headers.get('location');
             this.router.navigate([redirectTo]);
           } else {
-            console.log(resp)
             this.snackBar.open('Email and/or password is incorrect.','OK', {duration: 1500})
           }
 

@@ -29,7 +29,6 @@ export class RegisterComponent implements OnInit {
 
   register() {
     const values = this.form.value;
-    console.log(values)
     if (values.username && values.email && values.password && values.password2 && values.name && (values.password === values.password2)) {
       const headers = {'content-type': 'application/json'}
       const payload = {email: values.email, password: values.password, username: values.username}
@@ -50,7 +49,6 @@ export class RegisterComponent implements OnInit {
           }
 
         }, error =>{
-          console.log(error)
           this.snackBar.open(error.error.error,'OK', {duration: 1500})
         })
     }
