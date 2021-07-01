@@ -34,12 +34,19 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    const values = this.form.value;
-    if (values.username && values.email && values.password && values.password2 && values.name && (values.password === values.password2)) {
+    const values = {
+      username: this.username.value,
+      email: this.email.value,
+      name: this.name.value,
+      password: this.password.value,
+      password2: this.password2.value,
+    };
+
+    if (values.username && values.email && values.name && values.password && (values.password2 === values.password)) {
       const headers = {'content-type': 'application/json'};
       const payload = {email: values.email, password: values.password, username: values.username};
       const body = JSON.stringify(payload);
-      this.http.post('/api/user/register', body, {headers: headers, observe: 'response'})
+      this.http.post('/api/user/register', body, {headers, observe: 'response'})
         .subscribe(resp => {
 
           switch (resp.status) {
