@@ -8,6 +8,7 @@ export class NotificationService {
   constructor() {
   }
 
+
   sendNotification(title: string, options: object = {}) {
     if ('Notification' in window) {
       Notification.requestPermission((result => {
